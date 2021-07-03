@@ -2,8 +2,6 @@
 
 [![Build status](https://github.com/shopify/dawn/actions/workflows/lighthouse-ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/lighthouse-ci.yml?query=branch%3Amain)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/CONTRIBUTING.md)
-![GitHub repo size](https://img.shields.io/github/repo-size/catchspider2002/furniture-theme)
-![GitHub last commit](https://img.shields.io/github/last-commit/catchspider2002/furniture-theme)
 
 
 [Getting started](#getting-started) |
