@@ -766,6 +766,9 @@
             },
             "show_author": {
               "label": "Show author"
+            },
+            "show_labels": {
+              "label": "Show labels"
             }
           }
         },

@@ -1,38 +1,46 @@
 /* Derived from base colors (theme settings) */
 
+:root {
+  --border-radius: 0.25rem;
+}
+
+.pt-2{
+  padding-top: 0.5rem;
+}
+
 :root,
 .color-background-1 {
   --color-foreground: var(--color-base-text);
   --color-foreground-rgb: var(--color-base-text-rgb);
   --color-background: var(--color-base-background-1);
-  --color-background-rbg: var(--color-base-background-1-rgb);
+  --color-background-rgb: var(--color-base-background-1-rgb);
   --payment-terms-background-color: var(--color-base-background-1);
 }
 
 .color-background-2 {
   --color-background: var(--color-base-background-2);
-  --color-background-rbg: var(--color-base-background-2-rgb);
+  --color-background-rgb: var(--color-base-background-2-rgb);
 }
 
 .color-inverse {
   --color-foreground: var(--color-base-background-1);
   --color-foreground-rgb: var(--color-base-background-1-rgb);
   --color-background: var(--color-base-text);
-  --color-background-rbg: var(--color-base-text-rgb);
+  --color-background-rgb: var(--color-base-text-rgb);
 }
 
 .color-accent-1 {
   --color-foreground: var(--color-base-solid-button-labels);
   --color-foreground-rgb: var(--color-base-solid-button-labels-rgb);
   --color-background: var(--color-base-accent-1);
-  --color-background-rbg: var(--color-base-accent-1-rgb);
+  --color-background-rgb: var(--color-base-accent-1-rgb);
 }
 
 .color-accent-2 {
   --color-foreground: var(--color-base-solid-button-labels);
   --color-foreground-rgb: var(--color-base-solid-button-labels-rgb);
   --color-background: var(--color-base-accent-2);
-  --color-background-rbg: var(--color-base-accent-2-rgb);
+  --color-background-rgb: var(--color-base-accent-2-rgb);
 }
 
 .color-foreground-outline-button {
@@ -102,7 +110,7 @@
   --color-button-background: var(--color-foreground);
   --color-button-border: var(--color-foreground);
   --color-button-text: var(--color-background);
-  --color-button-text-rgb: var(--color-background-rbg);
+  --color-button-text-rgb: var(--color-background-rgb);
 }
 
 /* Secondary button */
@@ -1853,7 +1861,6 @@ menu-drawer + .header__search {
 } */
 
 @media screen and (min-width: 990px) {
-
   .header__search {
     display: inline-flex;
     line-height: 0;

@@ -11,10 +11,10 @@
 {% endcomment %}
 
 <article class="article-card{% if article.image == blank or show_image == false %} article-card--no-image{% endif %}" aria-labelledby="Article-{{ article.id }}">
-  <a href="{{ article.url }}" class="article-content motion-reduce">
+  <div class="article-content motion-reduce">
     {%- if show_image == true and article.image -%}
       <div class="article-card__image-wrapper">
-        <div class="article-card__image media media--landscape">
+        <a href="{{ article.url }}" class="article-card__image media media--landscape">
           <img srcset="
             {%- if article.image.src.width >= 165 -%}{{ article.image.src | img_url: '165x' }} 165w,{%- endif -%}
             {%- if article.image.src.width >= 360 -%}{{ article.image.src | img_url: '360x' }} 360w,{%- endif -%}
@@ -30,7 +30,7 @@
             loading="lazy"
             class="motion-reduce"
           >
-        </div>
+        </a>
       </div>
     {%- endif -%}
 
@@ -39,22 +39,29 @@
         {%- case block.type -%}
           {%- when 'title'-%}
             <header class="article-card__header" {{ block.shopify_attributes }}>
+              {%- if block.settings.show_labels -%}
+                <div class="article-card__tags">
+                {% for tag in article.tags %}
+                    <span class="color-accent-1 article-card__tag">{{ tag }}</span>
+                {% endfor %}
+                </div>
+              {%- endif -%}
               <h2 class="article-card__title" id="Article-{{ article.id }}">
-                {{ article.title | escape }}
+                <a href="{{ article.url }}" >{{ article.title | escape }}</a>
               </h2>
               {%- if block.settings.show_date -%}
-                <span class="circle-divider caption-with-letter-spacing">
+                <span class="circle-divider caption-with-letter-spacing pt-2">
                   {{- article.published_at | time_tag: format: 'month_year' -}}
                 </span>
               {%- endif -%}
               {%- if block.settings.show_author -%}
-                <span class="caption-with-letter-spacing">{{ article.author -}}</span>
+                <span class="caption-with-letter-spacing pt-2">{{ article.author -}}</span>
               {%- endif -%}
             </header>
 
           {%- when 'summary'-%}
             {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
-              <p class="article-card__excerpt rte-width" {{ block.shopify_attributes }}>
+              <p class="article-card__excerpt rte-width pt-2" {{ block.shopify_attributes }}>
                 {%- if article.excerpt.size > 0 -%}
                   {{ article.excerpt | strip_html | truncatewords: 30 }}
                 {%- else -%}
@@ -65,9 +72,9 @@
 
           {%- when 'link'-%}
             <div class="article-card__footer" {{ block.shopify_attributes }}>
-              <span class="link article-card__link" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title | escape }}">
+              <a href="{{ article.url }}" class="link article-card__link" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title | escape }}">
                 {{ 'blogs.article.read_more' | t }}
-              </span>
+              </a>
 
               {%- if article.comments_count > 0 and blog.comments_enabled? -%}
                 <span>{{ 'blogs.article.comments' | t: count: article.comments_count }}</span>
@@ -76,5 +83,5 @@
         {%- endcase -%}
       {%- endfor -%}
     </div>
-  </a>
+  </div>
 </article>
