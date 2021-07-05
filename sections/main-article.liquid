@@ -28,6 +28,13 @@
 
         {%- when 'title'-%}
           <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
+            {%- if block.settings.blog_show_labels -%}
+              <div class="article-card__tags">
+              {% for tag in article.tags %}
+              <span class="color-accent-1 article-card__tag">{{ tag | link_to_tag: tag }}</span>      
+              {% endfor %}
+              </div>
+            {%- endif -%}
             <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
             {%- if block.settings.blog_show_date -%}
               <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'month_year' }}</span>
@@ -253,6 +260,12 @@
           "id": "blog_show_author",
           "default": false,
           "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_labels",
+          "default": false,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_labels.label"
         }
       ]
     },

@@ -42,12 +42,12 @@
               {%- if block.settings.show_labels -%}
                 <div class="article-card__tags">
                 {% for tag in article.tags %}
-                    <span class="color-accent-1 article-card__tag">{{ tag }}</span>
+                    <span class="color-accent-1 article-card__tag">{{ tag | link_to_tag: tag }}</span>                    
                 {% endfor %}
                 </div>
               {%- endif -%}
               <h2 class="article-card__title" id="Article-{{ article.id }}">
-                <a href="{{ article.url }}" >{{ article.title | escape }}</a>
+                <a class="full-unstyled-link" href="{{ article.url }}" >{{ article.title | escape }}</a>
               </h2>
               {%- if block.settings.show_date -%}
                 <span class="circle-divider caption-with-letter-spacing pt-2">

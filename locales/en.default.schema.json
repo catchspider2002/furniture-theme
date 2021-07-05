@@ -392,6 +392,9 @@
             },
             "show_author": {
               "label": "Show author"
+            },
+            "show_labels": {
+              "label": "Show labels"
             }
           }
         },
@@ -732,6 +735,9 @@
             },
             "blog_show_author": {
               "label": "Show author"
+            },
+            "blog_show_labels": {
+              "label": "Show labels"
             }
           }
         },
