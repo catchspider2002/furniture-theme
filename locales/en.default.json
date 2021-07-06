@@ -171,7 +171,9 @@
     },
     "404": {
       "title": "Page not found",
-      "subtext": "404"
+      "subtext": "404",
+      "heading": "404 Error",
+      "description": "Sorry, we couldn't find the page you are looking for"
     }
   },
   "sections": {
