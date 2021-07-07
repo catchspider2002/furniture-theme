@@ -8,15 +8,21 @@
   div:empty {
     display: block;
   }
-
-  .bg {
-    background-image: url("https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&h=1080");
-    /* height: 80vh; */
-  }
 </style>
 
 <section>
-  <div class="bg block bg-center bg-no-repeat bg-cover w-full h-screen"></div>
+  {%- if section.settings.image404 != blank -%} {%- assign image_size = 'master' -%}
+  <div
+    class="block bg-center bg-no-repeat bg-cover w-full h-screen"
+    style="background-image: url('{{ section.settings.image404 | img_url: image_size }}');"
+  ></div>
+  {%- else -%}
+  <div
+    class="block bg-center bg-no-repeat bg-cover w-full h-screen"
+    style="background-image: url('https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&h=1080')"
+  ></div>
+  {%- endif -%}
+
   <div class="absolute left-0 w-full top-24">
     <div class="pt-28 text-center">
       <h1 class="font-black text-8xl sm:text-9xl opacity-60">{{ "templates.404.subtext" | t }}</h1>
@@ -28,3 +34,6 @@
     </div>
   </div>
 </section>
+
+{% schema %} { "name": "t:sections.404-page.header", "settings": [ { "type": "image_picker", "id": "image404", "label": "t:sections.404-page.bgImage"
+} ] } {% endschema %}

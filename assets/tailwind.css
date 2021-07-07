@@ -597,6 +597,11 @@ video {
   left: 0;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-2 {
   margin-bottom: 0.5em;
 }
@@ -607,6 +612,10 @@ video {
 
 .block {
   display: block;
+}
+
+.flex {
+  display: flex;
 }
 
 .table {
@@ -695,8 +704,20 @@ video {
   }
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.place-content-between {
+  place-content: space-between;
+}
+
+.items-center {
+  align-items: center;
 }
 
 .overflow-hidden {

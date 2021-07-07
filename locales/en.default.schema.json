@@ -922,6 +922,10 @@
     "main-page": {
       "name": "Page"
     },
+    "404-page": {
+      "header": "404 Section",
+      "bgImage": "Background Image"
+    },
     "main-password-footer": {
       "name": "Password footer"
     },

@@ -1,17 +1,34 @@
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
 {{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+{{ "tailwind.css" | asset_url | stylesheet_tag }}
 
-<div class="newsletter center{% if section.settings.full_width == false %} newsletter--narrow page-width{% endif%}">
+
+<!-- Layout 1 - Space between in single line
+Layout 2 - Left aligned one below
+Layout 3 - Center aligned -->
+
+<div class="newsletter {% if section.settings.layout == "layout-3" %} center{% endif%} {% if section.settings.full_width == false %} newsletter--narrow page-width{% endif%} 
+{% if section.settings.layout == "layout-1" %} flex items-center place-content-between{% endif%}
+{% if section.settings.layout == "layout-2" %} flex flex-col {% endif%}">
   <div class="newsletter__wrapper color-{{ section.settings.color_scheme }}">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
+      <div>
         {%- when 'heading' -%}
           <h2 class="h1" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
         {%- when 'paragraph' -%}
-          <div class="newsletter__subheading rte" {{ block.shopify_attributes }}>{{ block.settings.paragraph }}</div>
+          <div class="newsletter__subheading 
+          {% if section.settings.layout == "layout-3" %} mx-auto{% endif%}
+           rte" {{ block.shopify_attributes }}>{{ block.settings.paragraph }}</div>
+      </div>
+
+      {%- if section.settings.layout == "layout-3" -%} {%- assign nl_class = 'newsletter-form mx-auto' -%}
+      {%- else -%} {%- assign nl_class = 'newsletter-form' -%}
+      {%- endif -%}
+
         {%- when 'email_form' -%}
           <div {{ block.shopify_attributes }}>
-            {% form 'customer', class: 'newsletter-form' %}
+            {% form 'customer', class: nl_class %}
               <input type="hidden" name="contact[tags]" value="newsletter">
               <div class="newsletter-form__field-wrapper">
                 <div class="field">
@@ -62,6 +79,26 @@
   "tag": "section",
   "class": "spaced-section spaced-section--full-width",
   "settings": [
+  {
+    "type": "select",
+    "id": "layout",
+    "options": [
+      {
+        "value": "layout-1",
+        "label": "Layout 1"
+      },
+      {
+        "value": "layout-2",
+        "label": "Layout 2"
+      },
+      {
+        "value": "layout-3",
+        "label": "Layout 3"
+      }
+    ],
+    "default": "layout-1",
+    "label": "Layout"
+  },
     {
       "type": "select",
       "id": "color_scheme",
