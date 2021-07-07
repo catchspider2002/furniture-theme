@@ -1,56 +1,30 @@
-{{ 'tailwind.css' | asset_url | stylesheet_tag }}
+{{ "tailwind.css" | asset_url | stylesheet_tag }}
 
 <style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
-  }
-
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
-    }
-  }
   section {
     font-size: 16px;
   }
-  .half-screen {
-    min-height: 70vh;
+
+  div:empty {
+    display: block;
+  }
+
+  .bg {
+    background-image: url("https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&h=1080");
+    /* height: 80vh; */
   }
 </style>
 
-<!-- <div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="link body-large">
-    {{ 'general.continue_shopping' | t }}
-  </a>
-</div> -->
-
-<section class="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0 half-screen place-content-center">
-  <div class="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
-    <div class="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
-      <div class="max-w-xl mb-6">
-        <h2 class="max-w-lg mb-6 text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none">
-          {{ "templates.404.heading" | t }}
-        </h2>
-        <p class="text-base md:text-lg">
-          {{ "templates.404.description" | t }}
-        </p>
-      </div>
-      <a href="{{ routes.all_products_collection_url }}" class="text-base link color-link body-large">
+<section>
+  <div class="bg block bg-center bg-no-repeat bg-cover w-full h-screen"></div>
+  <div class="absolute left-0 w-full top-24">
+    <div class="pt-28 text-center">
+      <h1 class="font-black text-8xl sm:text-9xl opacity-60">{{ "templates.404.subtext" | t }}</h1>
+      <h2 class="font-bold mb-2 opacity-90 text-3xl">{{ "templates.404.title" | t }}</h2>
+      <p class="font-light text-base mb-36 px-5">{{ "templates.404.description" | t }}</p>
+      <a href="{{ routes.all_products_collection_url }}" class="text-base body-large button button--primary">
         {{ "general.continue_shopping" | t }}
       </a>
     </div>
-  </div>
-  <div class="inset-y-0 right-0 w-full max-w-xl px-4 mx-auto lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
-    <img
-      class="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none sm:h-96 lg:h-full"
-      src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-      alt=""
-    />
   </div>
 </section>
