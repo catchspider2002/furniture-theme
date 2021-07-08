@@ -7,7 +7,7 @@
 Layout 2 - Left aligned one below
 Layout 3 - Center aligned -->
 
-<div class="newsletter {% if section.settings.layout == "layout-3" %} center{% endif%} {% if section.settings.full_width == false %} newsletter--narrow page-width{% endif%} 
+<section class="newsletter px-16 md:px-36 {% if section.settings.layout == "layout-3" %} center{% endif%} {% if section.settings.full_width == false %} newsletter--narrow page-width{% endif%} 
 {% if section.settings.layout == "layout-1" %} flex items-center place-content-between{% endif%}
 {% if section.settings.layout == "layout-2" %} flex flex-col {% endif%}">
   <div class="newsletter__wrapper color-{{ section.settings.color_scheme }}">
@@ -71,7 +71,7 @@ Layout 3 - Center aligned -->
       {%- endcase -%}
     {%- endfor -%}
   </div>
-</div>
+</section>
 
 {% schema %}
 {

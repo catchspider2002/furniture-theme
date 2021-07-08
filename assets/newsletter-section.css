@@ -1,3 +1,7 @@
+section {
+  font-size: 16px;
+}
+
 .newsletter--narrow .newsletter__wrapper,
 .newsletter:not(.newsletter--narrow) .newsletter__wrapper.color-background-1 {
   margin-top: 5rem;
@@ -5,19 +9,19 @@
 }
 
 .newsletter__wrapper:not(.color-background-1) {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  /* padding-top: 5rem;
+  padding-bottom: 5rem; */
 }
 
 .newsletter__wrapper {
-  padding-right: 4rem;
-  padding-left: 4rem;
+  /* padding-right: 4rem;
+  padding-left: 4rem; */
 }
 
 @media screen and (min-width: 750px) {
   .newsletter__wrapper {
-    padding-right: 9rem;
-    padding-left: 9rem;
+    /* padding-right: 9rem;
+    padding-left: 9rem; */
   }
 }
 
