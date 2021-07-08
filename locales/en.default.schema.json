@@ -343,6 +343,49 @@
         "name": "Collection list"
       }
     },
+    "collection-list-2-columns": {
+      "name": "Collection list - 2 columns",
+      "settings": {
+        "title": {
+          "label": "Heading"
+        },
+        "image_ratio": {
+          "label": "Image ratio",
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Portrait"
+          },
+          "options__3": {
+            "label": "Square"
+          },
+          "info": "To add images, [edit your collections](https://help.shopify.com/en/manual/products/collections)"
+        },
+        "swipe_on_mobile": {
+          "label": "Enable swipe on mobile"
+        },
+        "image_padding": {
+          "label": "Add image padding"
+        },
+        "show_view_all": {
+          "label": "Enable \"View all\" button if list includes more collections than shown"
+        }
+      },
+      "blocks": {
+        "featured_collection": {
+          "name": "Collection",
+          "settings": {
+            "collection": {
+              "label": "Collection"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Collection list - 2 columns"
+      }
+    },
     "contact-form": {
       "name": "Contact Form",
       "presets": {
@@ -1258,6 +1301,18 @@
         },
         "paragraph": {
           "content": "When customers subscribe to emails, customer accounts are created. [Learn more](https://help.shopify.com/en/manual/customers)"
+        },
+        "layout": {
+          "label": "Layout",
+          "options__1": {
+            "label": "2 Columns"
+          },
+          "options__2": {
+            "label": "Left Aligned"
+          },
+          "options__3": {
+            "label": "Centered"
+          }
         }
       },
       "blocks": {
@@ -1278,7 +1333,12 @@
           }
         },
         "email_form": {
-          "name": "Email form"
+          "name": "Email form",
+          "settings": {
+            "heading": {
+              "label": "Button Label"
+            }
+          }
         }
       },
       "presets": {

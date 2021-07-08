@@ -878,8 +878,8 @@ summary::-webkit-details-marker {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
-  margin-left: -0.5rem;
+  /* margin-bottom: 2rem; */
+  /* margin-left: -0.5rem; */
   padding: 0;
   list-style: none;
 }
