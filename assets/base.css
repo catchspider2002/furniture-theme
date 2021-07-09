@@ -545,7 +545,7 @@ table:not([class]) th {
 a:empty,
 ul:empty,
 dl:empty,
-div:empty,
+/* div:empty, */
 section:empty,
 article:empty,
 p:empty,
@@ -884,11 +884,11 @@ summary::-webkit-details-marker {
   list-style: none;
 }
 
-@media screen and (min-width: 750px) {
+/* @media screen and (min-width: 750px) {
   .grid {
     margin-left: -1rem;
   }
-}
+} */
 
 .grid__item {
   padding-left: 0.5rem;
