@@ -17,6 +17,24 @@
       "options__5": {
         "label": "Inverse"
       }
+    },
+    "layout": {
+      "label": "Layout",
+      "options__1": {
+        "label": "Layout 1"
+      },
+      "options__2": {
+        "label": "Layout 2"
+      },
+      "options__3": {
+        "label": "Layout 3"
+      },
+      "options__4": {
+        "label": "Layout 4"
+      },
+      "options__5": {
+        "label": "Layout 5"
+      }
     }
   },
   "settings_schema": {
@@ -353,6 +371,9 @@
       "settings": {
         "title": {
           "label": "Heading"
+        },
+        "subtitle": {
+          "label": "Sub Heading"
         },
         "image_ratio": {
           "label": "Image ratio",

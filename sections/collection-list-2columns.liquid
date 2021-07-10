@@ -22,12 +22,11 @@
   {%- for block in section.blocks -%}
     <li {{ block.shopify_attributes }}>
       <a{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %} href="{{ block.settings.collection.url }}"{% endif %}
-        class="card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %}{% unless section.settings.image_padding %} card--light-border{% endunless %}"
+        class="card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} card--light-border"
       >
         <div class="card--stretch card-colored color-{{ section.settings.color_scheme }}">
           {%- if block.settings.collection.image != blank -%}
-            <div class="{% if section.settings.image_padding %}card__media-spacer{% endif %} relative">
-              {% if section.settings.image_padding %}<div class="overlay-card"></div>{% endif %}
+            <div class="relative">
               <div class="media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect overflow-hidden"
                 {% if section.settings.image_ratio == 'adapt' and section.blocks.size > 1 %}style="padding-bottom: {{ 1 | divided_by: block.settings.collection.image.aspect_ratio | times: 100 }}%;"{% endif %}>
 
@@ -144,12 +143,6 @@
       "id": "full_width",
       "default": true,
       "label": "t:sections.newsletter.settings.full_width.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "image_padding",
-      "default": false,
-      "label": "t:sections.collection-list-multi-columns.settings.image_padding.label"
     }
   ],
   "blocks": [
@@ -166,13 +159,13 @@
           "type": "text",
           "id": "heading",
           "default": "CLEARANCE SALE",
-          "label": "t:sections.newsletter.blocks.heading.settings.heading.label"
+          "label": "t:sections.collection-list-multi-columns.settings.title.label"
         },
         {
           "type": "text",
           "id": "subheading",
           "default": "GET UPTO 50% OFF",
-          "label": "t:sections.newsletter.blocks.paragraph.settings.paragraph.label"
+          "label": "t:sections.collection-list-multi-columns.settings.subtitle.label"
         }
       ]
     }

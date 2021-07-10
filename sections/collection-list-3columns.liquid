@@ -11,11 +11,15 @@
   }
   .tall-image{
     display: block;
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media (min-width: 640px) {
+  .tall-image{
     height: calc(200% + 4em);
   }
 </style>
@@ -29,14 +33,14 @@
     role="list"
   >
   {%- for block in section.blocks -%}
-    <li {{ block.shopify_attributes }} class="{% if forloop.index == 1 %}row-span-2{% endif %}">
+    <li {{ block.shopify_attributes }} 
+    class="{% if forloop.index == 1 %}row-span-2{% endif %}{% if forloop.index == 2 and section.settings.layout == "layout-2" %} order-first{% endif %}">
       <a{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %} href="{{ block.settings.collection.url }}"{% endif %}
-        class="h-full card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %}{% unless section.settings.image_padding %} card--light-border{% endunless %}"
+        class="h-full card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} card--light-border"
       >
         <div class="card--stretch card-colored color-{{ section.settings.color_scheme }}">
           {%- if block.settings.collection.image != blank -%}
-            <div class="{% if section.settings.image_padding %}card__media-spacer{% endif %} relative h-full">
-              {% if section.settings.image_padding %}<div class="overlay-card"></div>{% endif %}
+            <div class="relative h-full">
               <div class="media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect {% if forloop.index == 1 %}overflow-visible{% else %}overflow-hidden{% endif %}"
                 {% if section.settings.image_ratio == 'adapt' and section.blocks.size > 1 %}style="padding-bottom: {{ 1 | divided_by: block.settings.collection.image.aspect_ratio | times: 100 }}%;"{% endif %}>
 
@@ -149,16 +153,30 @@
       "label": "t:global.color_scheme.label"
     },
     {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "layout-1",
+          "label": "t:global.layout.options__1.label"
+        },
+        {
+          "value": "layout-2",
+          "label": "t:global.layout.options__2.label"
+        },
+        {
+          "value": "layout-3",
+          "label": "t:global.layout.options__3.label"
+        }
+      ],
+      "default": "layout-1",
+      "label": "t:global.layout.label"
+    },
+    {
       "type": "checkbox",
       "id": "full_width",
       "default": true,
       "label": "t:sections.newsletter.settings.full_width.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "image_padding",
-      "default": false,
-      "label": "t:sections.collection-list-multi-columns.settings.image_padding.label"
     }
   ],
   "blocks": [
@@ -175,13 +193,13 @@
           "type": "text",
           "id": "heading",
           "default": "CLEARANCE SALE",
-          "label": "t:sections.newsletter.blocks.heading.settings.heading.label"
+          "label": "t:sections.collection-list-multi-columns.settings.title.label"
         },
         {
           "type": "text",
           "id": "subheading",
           "default": "GET UPTO 50% OFF",
-          "label": "t:sections.newsletter.blocks.paragraph.settings.paragraph.label"
+          "label": "t:sections.collection-list-multi-columns.settings.subtitle.label"
         }
       ]
     }
