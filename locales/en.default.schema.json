@@ -367,6 +367,9 @@
     "collection-list-3-columns": {
       "name": "Collection list - 3 columns"
     },
+    "collection-list-4-columns": {
+      "name": "Collection list - 4 columns"
+    },
     "collection-list-multi-columns": {
       "settings": {
         "title": {

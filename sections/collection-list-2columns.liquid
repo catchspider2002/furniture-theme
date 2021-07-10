@@ -15,19 +15,20 @@
 <section class="{% if section.settings.full_width == false %} mx-auto page-width{% endif%}">
     <h2 class="mx-5 mb-5 mt-16{% if section.settings.title == blank %} hidden{% endif %}">{{ section.settings.title | escape }}</h2>
 
-  <ul class="m-5 gap-5 collection-list grid grid-cols-1 sm:grid-cols-2 collection-list--{{ section.blocks.size }}-items{% if section.blocks.size > collections.size %} negative-margin--small{% endif %}"
+  <ul class="m-5 gap-5 collection-list grid grid-cols-1{% if section.settings.layout == "layout-1" %} sm:grid-cols-2{% else %} sm:grid-cols-3{% endif %} collection-list--{{ section.blocks.size }}-items"
     id="Slider-{{ section.id }}"
     role="list"
   >
   {%- for block in section.blocks -%}
-    <li {{ block.shopify_attributes }}>
+    <li {{ block.shopify_attributes }}
+    class="{% if forloop.index == 1 and section.settings.layout == "layout-2" %}col-span-2{% endif %}{% if forloop.index == 2 and section.settings.layout == "layout-3" %}col-span-2{% endif %}">
       <a{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %} href="{{ block.settings.collection.url }}"{% endif %}
-        class="card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} card--light-border"
+        class="h-full card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} card--light-border"
       >
-        <div class="card--stretch card-colored color-{{ section.settings.color_scheme }}">
+        <div class="h-full card--stretch card-colored color-{{ section.settings.color_scheme }}">
           {%- if block.settings.collection.image != blank -%}
-            <div class="relative">
-              <div class="media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect overflow-hidden"
+            <div class="relative h-full">
+              <div class="h-full media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect overflow-hidden"
                 {% if section.settings.image_ratio == 'adapt' and section.blocks.size > 1 %}style="padding-bottom: {{ 1 | divided_by: block.settings.collection.image.aspect_ratio | times: 100 }}%;"{% endif %}>
 
                 <img srcset="{%- if block.settings.collection.image.width >= 165 -%}{{ block.settings.collection.image | img_url: '165x' }} 165w,{%- endif -%}
@@ -137,6 +138,26 @@
       ],
       "default": "background-1",
       "label": "t:global.color_scheme.label"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "layout-1",
+          "label": "t:global.layout.options__1.label"
+        },
+        {
+          "value": "layout-2",
+          "label": "t:global.layout.options__2.label"
+        },
+        {
+          "value": "layout-3",
+          "label": "t:global.layout.options__3.label"
+        }
+      ],
+      "default": "layout-1",
+      "label": "t:global.layout.label"
     },
     {
       "type": "checkbox",

@@ -9,7 +9,7 @@
   section {
     font-size: 16px;
   }
-  .image-2span{
+  .image-2span,.image-3span{
     display: block;
     max-width: 100%;
     position: absolute;
@@ -22,26 +22,32 @@
   .image-2span{
     height: calc(200% + 4em);
   }
+  .image-3span{
+    height: calc(300% + 8em);
+  }
 </style>
 
 
 <section class="{% if section.settings.full_width == false %} mx-auto page-width{% endif%}">
     <h2 class="mx-5 mb-5 mt-16{% if section.settings.title == blank %} hidden{% endif %}">{{ section.settings.title | escape }}</h2>
 
-  <ul class="m-5 gap-5 collection-list grid grid-cols-1 {% if section.settings.layout == "layout-3" %} sm:grid-cols-3{% else %} sm:grid-cols-2 sm:grid-rows-2{% endif %} collection-list--{{ section.blocks.size }}-items"
+  <ul class="m-5 gap-5 collection-list grid grid-cols-1 {% if section.settings.layout == "layout-2" or section.settings.layout == "layout-3" %} sm:grid-cols-2 sm:grid-rows-3{% elsif section.settings.layout == "layout-4" %} sm:grid-cols-3 sm:grid-rows-2{% else %} sm:grid-cols-4 sm:grid-rows-2{% endif %} collection-list--{{ section.blocks.size }}-items"
     id="Slider-{{ section.id }}"
     role="list"
   >
   {%- for block in section.blocks -%}
     <li {{ block.shopify_attributes }} 
-    class="{% if forloop.index == 1 and section.settings.layout != "layout-3" %}row-span-2{% endif %}{% if forloop.index == 2 and section.settings.layout == "layout-2" %} order-first{% endif %}">
+    class="{% if section.settings.layout == "layout-1" %}{% if forloop.index == 1 %}row-span-2 col-span-2{% elsif forloop.index == 2 %} col-span-2{% endif %}{% endif %}
+    {% if section.settings.layout == "layout-2" and forloop.index == 1 %} row-span-3{% endif %}
+    {% if section.settings.layout == "layout-3" or section.settings.layout == "layout-4" %}{% if forloop.index == 1 or forloop.index == 3 %}row-span-2 {% endif %}{% endif %}
+    ">
       <a{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %} href="{{ block.settings.collection.url }}"{% endif %}
         class="h-full card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} card--light-border"
       >
         <div class="card--stretch card-colored color-{{ section.settings.color_scheme }}">
           {%- if block.settings.collection.image != blank -%}
             <div class="relative h-full">
-              <div class="media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect {% if forloop.index == 1 %}overflow-visible{% else %}overflow-hidden{% endif %}"
+              <div class="{% if section.settings.layout == "layout-1" and forloop.index != 1 %}h-full{% endif %}{% if section.settings.layout == "layout-3" or section.settings.layout == "layout-4" %}{% if forloop.index == 1 or forloop.index == 3 %}h-full{% endif %}{% endif %} media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect {% if forloop.index == 1 %}overflow-visible{% else %}overflow-hidden{% endif %}"
                 {% if section.settings.image_ratio == 'adapt' and section.blocks.size > 1 %}style="padding-bottom: {{ 1 | divided_by: block.settings.collection.image.aspect_ratio | times: 100 }}%;"{% endif %}>
 
                 <img srcset="{%- if block.settings.collection.image.width >= 165 -%}{{ block.settings.collection.image | img_url: '165x' }} 165w,{%- endif -%}
@@ -57,7 +63,7 @@
                   height="{{ block.settings.collection.image.height }}"
                   width="{{ block.settings.collection.image.width }}"
                   loading="lazy"
-                  class="motion-reduce{% if forloop.index == 1 and section.settings.layout != "layout-3" %} image-2span{% endif %}"
+                  class="motion-reduce{% if forloop.index == 1 %}{% if section.settings.layout == "layout-1" %} image-2span{% elsif section.settings.layout == "layout-2" %} image-3span{% endif %}{% endif %}"
                 >
               </div>
               <div class="bg-black absolute top-0 bottom-0 right-0 left-0 bg-opacity-30 grid place-content-center text-center font-medium">
@@ -93,9 +99,9 @@
 
 {% schema %}
 {
-  "name": "t:sections.collection-list-3-columns.name",
+  "name": "t:sections.collection-list-4-columns.name",
   "tag": "section",
-  "max_blocks": 3,
+  "max_blocks": 4,
   "settings": [
     {
       "type": "text",
@@ -167,6 +173,10 @@
         {
           "value": "layout-3",
           "label": "t:global.layout.options__3.label"
+        },
+        {
+          "value": "layout-4",
+          "label": "t:global.layout.options__4.label"
         }
       ],
       "default": "layout-1",
@@ -206,8 +216,11 @@
   ],
   "presets": [
     {
-      "name": "t:sections.collection-list-3-columns.name",
+      "name": "t:sections.collection-list-4-columns.name",
       "blocks": [
+        {
+          "type": "featured_collection"
+        },
         {
           "type": "featured_collection"
         },

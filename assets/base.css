@@ -1062,7 +1062,7 @@ summary::-webkit-details-marker {
   background-color: transparent;
 }
 
-.media > *:not(.zoom, .deferred-media__poster-button, .tall-image),
+.media > *:not(.zoom, .deferred-media__poster-button, .image-2span, .image-3span),
 .media model-viewer {
   display: block;
   max-width: 100%;
