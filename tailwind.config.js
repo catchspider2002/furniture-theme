@@ -6,14 +6,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontSize: {
-      xs: ["0.75em", { lineHeight: "1em" }],
-      sm: ["0.875em", { lineHeight: "1.25em" }],
-      base: ["1em", { lineHeight: "1.5em" }],
-      lg: ["1.125em", { lineHeight: "1.75em" }],
-      xl: ["1.25em", { lineHeight: "1.75em" }],
-      "2xl": ["1.5em", { lineHeight: "2em" }],
-      "3xl": ["1.875em", { lineHeight: "2.25em" }],
-      "4xl": ["2.25em", { lineHeight: "2.5em" }],
+      xs: ["0.75em", { lineHeight: "1" }],
+      sm: ["0.875em", { lineHeight: "1" }],
+      base: ["1em", { lineHeight: "1" }],
+      lg: ["1.125em", { lineHeight: "1" }],
+      xl: ["1.25em", { lineHeight: "1" }],
+      "2xl": ["1.5em", { lineHeight: "1" }],
+      "3xl": ["1.875em", { lineHeight: "1" }],
+      "4xl": ["2.25em", { lineHeight: "1" }],
       "5xl": ["3em", { lineHeight: "1" }],
       "6xl": ["3.75em", { lineHeight: "1" }],
       "7xl": ["4.5em", { lineHeight: "1" }],

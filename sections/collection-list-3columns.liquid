@@ -9,26 +9,35 @@
   section {
     font-size: 16px;
   }
+  .tall-image{
+    display: block;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+    height: calc(200% + 4em);
+  }
 </style>
 
 
 <section class="{% if section.settings.full_width == false %} mx-auto page-width{% endif%}">
     <h2 class="mx-5 mb-5 mt-16{% if section.settings.title == blank %} hidden{% endif %}">{{ section.settings.title | escape }}</h2>
 
-  <ul class="m-5 gap-5 collection-list grid grid-cols-1 sm:grid-cols-2 collection-list--{{ section.blocks.size }}-items{% if section.blocks.size > collections.size %} negative-margin--small{% endif %}"
+  <ul class="m-5 gap-5 collection-list grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 collection-list--{{ section.blocks.size }}-items{% if section.blocks.size > collections.size %} negative-margin--small{% endif %}"
     id="Slider-{{ section.id }}"
     role="list"
   >
   {%- for block in section.blocks -%}
-    <li {{ block.shopify_attributes }}>
+    <li {{ block.shopify_attributes }} class="{% if forloop.index == 1 %}row-span-2{% endif %}">
       <a{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %} href="{{ block.settings.collection.url }}"{% endif %}
-        class="card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %}{% unless section.settings.image_padding %} card--light-border{% endunless %}"
+        class="h-full card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %}{% unless section.settings.image_padding %} card--light-border{% endunless %}"
       >
         <div class="card--stretch card-colored color-{{ section.settings.color_scheme }}">
           {%- if block.settings.collection.image != blank -%}
-            <div class="{% if section.settings.image_padding %}card__media-spacer{% endif %} relative">
+            <div class="{% if section.settings.image_padding %}card__media-spacer{% endif %} relative h-full">
               {% if section.settings.image_padding %}<div class="overlay-card"></div>{% endif %}
-              <div class="media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect overflow-hidden"
+              <div class="media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect {% if forloop.index == 1 %}overflow-visible{% else %}overflow-hidden{% endif %}"
                 {% if section.settings.image_ratio == 'adapt' and section.blocks.size > 1 %}style="padding-bottom: {{ 1 | divided_by: block.settings.collection.image.aspect_ratio | times: 100 }}%;"{% endif %}>
 
                 <img srcset="{%- if block.settings.collection.image.width >= 165 -%}{{ block.settings.collection.image | img_url: '165x' }} 165w,{%- endif -%}
@@ -44,7 +53,7 @@
                   height="{{ block.settings.collection.image.height }}"
                   width="{{ block.settings.collection.image.width }}"
                   loading="lazy"
-                  class="motion-reduce"
+                  class="motion-reduce{% if forloop.index == 1 %} tall-image{% endif %}"
                 >
               </div>
               <div class="bg-black absolute top-0 bottom-0 right-0 left-0 bg-opacity-30 grid place-content-center text-center font-medium">
@@ -80,9 +89,9 @@
 
 {% schema %}
 {
-  "name": "t:sections.collection-list-2-columns.name",
+  "name": "t:sections.collection-list-3-columns.name",
   "tag": "section",
-  "max_blocks": 2,
+  "max_blocks": 3,
   "settings": [
     {
       "type": "text",
@@ -179,8 +188,11 @@
   ],
   "presets": [
     {
-      "name": "t:sections.collection-list-2-columns.name",
+      "name": "t:sections.collection-list-3-columns.name",
       "blocks": [
+        {
+          "type": "featured_collection"
+        },
         {
           "type": "featured_collection"
         },

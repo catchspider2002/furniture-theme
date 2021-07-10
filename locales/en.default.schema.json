@@ -344,7 +344,12 @@
       }
     },
     "collection-list-2-columns": {
-      "name": "Collection list - 2 columns",
+      "name": "Collection list - 2 columns"
+    },
+    "collection-list-3-columns": {
+      "name": "Collection list - 3 columns"
+    },
+    "collection-list-multi-columns": {
       "settings": {
         "title": {
           "label": "Heading"
@@ -381,9 +386,6 @@
             }
           }
         }
-      },
-      "presets": {
-        "name": "Collection list - 2 columns"
       }
     },
     "contact-form": {
