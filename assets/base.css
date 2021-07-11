@@ -3040,8 +3040,22 @@ video {
   padding-top: 7em;
 }
 
+.pb-2 {
+  padding-bottom: 0.5em;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-xs {
+  font-size: 0.75em;
+  line-height: 1;
+}
+
+.text-sm {
+  font-size: 0.875em;
+  line-height: 1;
 }
 
 .text-base {
@@ -3070,6 +3084,10 @@ video {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .font-bold {

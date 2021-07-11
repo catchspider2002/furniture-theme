@@ -70,11 +70,11 @@
 .cart-item__old-price {
   opacity: 0.7;
 }
-
+/* 
 .product-option {
   font-size: 1.6rem;
   line-height: 1.5;
-}
+} */
 
 .cart-item cart-remove-button {
   display: inline-block;
