@@ -1,12 +1,6 @@
 <!-- {{ "tailwind.css" | asset_url | stylesheet_tag }} -->
 
-<style type="text/css">
-  section {
-    font-size: 16px;
-  }
-</style>
-
-<section>
+<section class="section">
   {%- if section.settings.image404 != blank -%} {%- assign image_size = 'master' -%}
   <div
     class="block bg-center bg-no-repeat bg-cover w-full h-screen"

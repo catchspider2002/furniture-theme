@@ -13,10 +13,6 @@
   visibility: hidden;
 }
 
-.price--end {
-  justify-content: flex-end;
-}
-
 .price dl {
   margin: 0;
   display: flex;

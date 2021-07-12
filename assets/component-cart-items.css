@@ -19,10 +19,6 @@
   text-align: right;
 }
 
-.cart-item__image {
-  max-width: 100%;
-}
-
 .cart-item__details {
   font-size: 1.6rem;
   line-height: 1.4;

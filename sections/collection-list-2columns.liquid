@@ -5,14 +5,7 @@
 
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
-<style type="text/css">
-  section {
-    font-size: 16px;
-  }
-</style>
-
-
-<section class="{% if section.settings.full_width == false %} mx-auto page-width{% endif%}">
+<section class="section{% if section.settings.full_width == false %} mx-auto page-width{% endif%}">
     <h2 class="mx-5 mb-5 mt-16{% if section.settings.title == blank %} hidden{% endif %}">{{ section.settings.title | escape }}</h2>
 
   <ul class="m-5 gap-5 collection-list grid grid-cols-1{% if section.settings.layout == "layout-1" %} sm:grid-cols-2{% else %} sm:grid-cols-3{% endif %} collection-list--{{ section.blocks.size }}-items"

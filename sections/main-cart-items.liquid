@@ -5,12 +5,6 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
-<style type="text/css">
-  .section {
-    font-size: 16px;
-  }
-</style>
-
 <cart-items class="section page-width{% if cart == empty %} is-empty{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
@@ -47,7 +41,7 @@
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
-                      <img class="cart-item__image"
+                      <img class="max-w-full"
                         src="{{ item.image | img_url: '150x' }}"
                         alt="{{ item.image.alt | escape }}"
                         loading="lazy"
@@ -125,14 +119,14 @@
                             {{ 'products.product.price.regular_price' | t }}
                           </dt>
                           <dd>
-                            <s class="cart-item__old-price price price--end">
+                            <s class="cart-item__old-price price justify-end">
                               {{ item.original_price | money }}
                             </s>
                           </dd>
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
-                          <dd class="price price--end">
+                          <dd class="price justify-end">
                             {{ item.final_price | money }}
                           </dd>
                         </dl>
@@ -150,7 +144,7 @@
                           </div>
                         {%- endif -%}
                       {%- else -%}
-                        <span class="price price--end">
+                        <span class="price justify-end">
                           {{ item.original_price | money }}
                         </span>
                       {%- endif -%}
@@ -197,12 +191,12 @@
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
-                          <dd class="price price--end">
+                          <dd class="price justify-end">
                             {{ item.final_line_price | money }}
                           </dd>
                         </dl>
                       {%- else -%}
-                        <span class="price price--end">
+                        <span class="price justify-end">
                           {{ item.original_line_price | money }}
                         </span>
                       {%- endif -%}
