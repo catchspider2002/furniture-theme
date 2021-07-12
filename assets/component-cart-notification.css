@@ -20,7 +20,7 @@
   z-index: -1;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .cart-notification {
     border-width: 0 0.1rem 0.1rem;
     max-width: 36.8rem;

@@ -182,7 +182,7 @@
                     </quantity-input>
                   </td>
 
-                  <td class="cart-item__totals right">
+                  <td class="cart-item__totals right grid grid-flow-col gap-6 items-center place-content-end">
                     <div class="loading-overlay hidden">
                       <div class="loading-overlay__spinner">
                         <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -208,7 +208,7 @@
                       {%- endif -%}
                     </div>
 
-                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" class="inline-block w-max" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}
                       </a>

@@ -81,7 +81,7 @@
   padding: 2rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .card--media .card__text-spacing {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -143,7 +143,7 @@
   margin-bottom: 1.5rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .card--text-only .card__content {
     margin-top: 7rem;
     margin-bottom: 7rem;
@@ -212,7 +212,7 @@
   padding: 2rem 2rem 0;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .card__media-spacer {
     padding: 3rem 3rem 0;
   }
@@ -256,7 +256,7 @@
   background-color: var(--color-card-hover);
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .card .media.media--hover-effect > img:only-child,
   .card-wrapper .media.media--hover-effect > img:only-child {
     transition: transform var(--duration-long) ease;
