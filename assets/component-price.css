@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  font-size: 1.6rem;
-  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  letter-spacing: 0.0625rem;
   line-height: 1.5;
   color: var(--color-foreground);
 }
@@ -20,7 +20,7 @@
 }
 
 .price dd {
-  margin: 0 1rem 0 0;
+  margin: 0 0.625rem 0 0;
 }
 
 .price .price__last:last-of-type {
@@ -34,14 +34,14 @@
 }
 
 .price--large {
-  font-size: 1.6rem;
+  font-size: 1rem;
   line-height: 1.5;
-  letter-spacing: 0.13rem;
+  letter-spacing: 0.08125rem;
 }
 
 @media screen and (min-width: 768px) {
   .price--large {
-    font-size: 1.8rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -82,10 +82,10 @@
 }
 
 .unit-price {
-  font-size: 1.1rem;
-  letter-spacing: 0.04rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.025rem;
   line-height: 1.2;
-  margin-top: 0.2rem;
+  margin-top: 0.125rem;
   text-transform: uppercase;
   color: var(--color-foreground-70);
 }
