@@ -2,8 +2,20 @@
 {{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .discounts__discount svg {
+  color: var(--color-button-background);
+}
+
+.discounts__discount > .icon {
+  color: var(--color-foreground);
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.4375rem;
+}
+</style>
 
 <cart-items class="section page-width{% if cart == empty %} is-empty{% endif %}">
   <div class="title-wrapper-with-link">
@@ -91,9 +103,9 @@
                       <p class="product-option text-sm pb-2">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                     {%- endif -%}
 
-                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                    <ul class="text-xs list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                       {%- for discount in item.discounts -%}
-                        <li class="discounts__discount">
+                        <li class="discounts__discount flex items-center leading-normal">
                           {%- render 'icon-discount' -%}
                           {{ discount.title }}
                         </li>

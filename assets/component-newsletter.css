@@ -16,24 +16,11 @@
   }
 }
 
-.newsletter-form__field-wrapper {
-  width: 100%;
-}
-
-.newsletter-form__message {
-  justify-content: center;
-  margin-bottom: 0;
-}
-
 .newsletter-form__message--success {
   margin-top: 1.25rem;
 }
 
 @media screen and (min-width: 768px) {
-  .newsletter-form__message {
-    justify-content: flex-start;
-  }
-
   .newsletter-form__message--success {
     position: absolute;
     left: 0;
@@ -41,7 +28,7 @@
   }
 }
 
-.newsletter-form__button {
+/* .newsletter-form__button {
   margin-left: 0.875rem;
 }
 
@@ -50,4 +37,4 @@
     width: 100%;
     margin: 0.875rem 0 0 0;
   }
-}
+} */

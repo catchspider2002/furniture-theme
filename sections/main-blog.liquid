@@ -1,16 +1,22 @@
 {{ 'component-article-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+<style>
+@media screen and (min-width: 768px) {
+  .blog-articles > *:first-child .article-card__tags{
+    place-content: center;
+  }
+}
+</style>
 
 
 {%- paginate blog.articles by 6 -%}
-
   <div class="main-blog page-width">
     <h1 class="title--primary">{{ blog.title | escape }}</h1>
 
-    <div class="blog-articles">
+    <div class="blog-articles grid gap-10 md:gap-16 grid-cols-2 ">
       {%- for article in blog.articles -%}
-        <div class="blog-articles__article article">
+        <div class="article first:text-center first:col-span-2">
           {%- render 'article-card', article: article, show_image: section.settings.show_image -%}
         </div>
       {%- endfor -%}

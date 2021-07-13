@@ -22,7 +22,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      gridColumn: ['first'],
+      textAlign: ['first'],
+    }
   },
+
   plugins: [],
 };

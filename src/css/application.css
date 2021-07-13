@@ -201,7 +201,7 @@ html.no-js .no-js-hidden {
 }
 
 .page-width {
-  max-width:75rem;
+  max-width: 75rem;
   margin: 0 auto;
   padding: 0 0.9375rem;
 }
@@ -1444,24 +1444,6 @@ input[type="checkbox"] {
   align-self: start;
 }
 
-.form-status {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.form-status-list {
-  padding: 0;
-  margin: 1.25rem 0 2.5rem;
-}
-
-.form-status-list li {
-  list-style-position: inside;
-}
-
-.form-status-list .link::first-letter {
-  text-transform: capitalize;
-}
-
 /* component-quantity */
 .quantity {
   border: 0.0625rem solid var(--color-foreground-55);
@@ -1834,11 +1816,6 @@ input[type="checkbox"] {
   width: 2.75rem;
 }
 
-.header__icon--cart {
-  position: relative;
-  margin-right: -0.75rem;
-}
-
 @media screen and (max-width: 1023px) {
   menu-drawer ~ .header__icons .header__icon--account {
     display: none;
@@ -1989,10 +1966,6 @@ details[open] > .header__icon--menu .icon-hamburger {
     justify-self: center;
   }
 
-  .header--top-center .header__inline-menu > .list-menu--inline {
-    justify-content: center;
-  }
-
   .header--middle-left .header__inline-menu,
   .header--middle-center .header__inline-menu {
     margin-left: 0;
@@ -2080,6 +2053,14 @@ details-disclosure > details {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Remove extra spacing for search inputs in Safari */
+input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.grecaptcha-badge {
+  visibility: hidden;
 }
 
 @tailwind base;

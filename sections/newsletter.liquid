@@ -1,6 +1,4 @@
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
-
 
 <!-- Layout 1 - Space between in single line
 Layout 2 - Left aligned one below
@@ -58,7 +56,7 @@ color-{{ section.settings.color_scheme }}">
                   </label>
                 </div>
                 {%- if form.errors -%}
-                  <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+                  <small class="justify-center mb-0 md:justify-start form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
                 {%- endif -%}
               </div>
               <button type="submit" class="button {% if section.settings.layout == "layout-3" %}place-self-center{% else %}place-self-start {% endif%}" name="commit">
@@ -66,7 +64,7 @@ color-{{ section.settings.color_scheme }}">
                 {{ block.settings.subscribeButton }}
               </button>
               {%- if form.posted_successfully? -%}
-                <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+                <h3 class="justify-center mb-0 md:justify-start newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
               {%- endif -%}
             {% endform %}
           </div>

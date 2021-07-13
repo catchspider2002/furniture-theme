@@ -8,20 +8,11 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .collage-wrapper-title {
-    margin-top: -0.625rem;
-  }
-}
 
 @media screen and (min-width: 768px) {
   .collage-wrapper.no-heading {
     margin-top: 3.75rem;
   }
-}
-
-.collage-wrapper-title {
-  margin-bottom: 1.875rem;
 }
 
 .collage {
@@ -369,10 +360,6 @@
     img {
     object-fit: contain;
   }
-}
-
-.collage-product__badge {
-  position: relative;
 }
 
 .collage-content__info {

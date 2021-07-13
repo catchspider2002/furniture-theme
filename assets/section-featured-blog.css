@@ -38,10 +38,6 @@
   margin-top: 0;
 }
 
-.blog__title {
-  margin: 0;
-}
-
 .blog__posts.articles-wrapper {
   margin-bottom: 0;
 }
@@ -77,16 +73,6 @@
 
 .background-secondary .article-card {
   background-color: var(--color-background);
-}
-
-.blog__button {
-  margin-top: 1.875rem;
-}
-
-@media screen and (min-width: 768px) {
-  .blog__button {
-    margin-top: 3.125rem;
-  }
 }
 
 @media screen and (max-width: 767px) {

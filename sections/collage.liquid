@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <div class="collage-wrapper page-width{% if section.settings.heading == blank %} no-heading{% endif %}">
-  <h2 class="collage-wrapper-title">{{ section.settings.heading | escape }}</h2>
+  <h2 class="-mt-2.5 md:mb-8">{{ section.settings.heading | escape }}</h2>
 
   <div class="collage collage--{{ section.settings.desktop_layout }}{% if section.settings.mobile_layout == 'collage' %} collage--mobile{% endif %}">
     {%- for block in section.blocks -%}
@@ -85,7 +85,7 @@
                       >
                     {%- endif -%}
                   </div>
-                  <div class="collage-product__badge">
+                  <div class="relative">
                     <div class="card__badge">
                       {%- if block.settings.product.available == false -%}
                         <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}" aria-hidden="true">
@@ -106,7 +106,7 @@
                   <div class="collage-card__no-image card-colored color-background-1 card__text-spacing center">
                     <h3 class="h2">{{ block.settings.product.title | escape }}</h3>
                   </div>
-                  <div class="collage-product__badge">
+                  <div class="relative">
                     <div class="card__badge">
                       {%- if block.settings.product.available == false -%}
                         <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}" aria-hidden="true">

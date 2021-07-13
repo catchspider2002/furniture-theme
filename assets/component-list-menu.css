@@ -1,7 +1,3 @@
-.list-menu--right {
-  right: 0;
-}
-
 .list-menu--disclosure {
   position: absolute;
   min-width: 100%;
@@ -19,9 +15,9 @@
   text-underline-offset: 0.1875rem;
 }
 
-.list-menu--disclosure.localization-selector {
+/* .list-menu--disclosure.localization-selector {
   max-height: 11.25rem;
   overflow: auto;
   width: 6.25rem;
   padding: 0.3125rem;
-}
+} */
