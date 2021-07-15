@@ -3,16 +3,16 @@
     "color_scheme": {
       "label": "Color scheme",
       "options__1": {
-        "label": "Accent 1"
+        "label": "Accent"
       },
       "options__2": {
-        "label": "Accent 2"
+        "label": "Secondary"
       },
       "options__3": {
-        "label": "Background 1"
+        "label": "Light"
       },
       "options__4": {
-        "label": "Background 2"
+        "label": "Dark"
       },
       "options__5": {
         "label": "Inverse"

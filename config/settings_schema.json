@@ -12,6 +12,122 @@
     "settings": [
       {
         "type": "header",
+        "content": "Accent Color Scheme"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_bg",
+        "default": "#B08D75",
+        "label": "Background Color",
+        "info": "Also used for solid button text"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_fg",
+        "default": "#FFFFFF",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_button",
+        "default": "#FFFFFF",
+        "label": "Button color"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_link",
+        "default": "#CCCCCC",
+        "label": "Link color"
+      },
+      {
+        "type": "header",
+        "content": "Secondary Color Scheme"
+      },
+      {
+        "type": "color",
+        "id": "colors_secondary_bg",
+        "default": "#75B08D",
+        "label": "Background Color",
+        "info": "Also used for solid button text"
+      },
+      {
+        "type": "color",
+        "id": "colors_secondary_fg",
+        "default": "#FFFFFF",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "colors_secondary_button",
+        "default": "#FFFFFF",
+        "label": "Button color"
+      },
+      {
+        "type": "color",
+        "id": "colors_secondary_link",
+        "default": "#CCCCCC",
+        "label": "Link color"
+      },
+      {
+        "type": "header",
+        "content": "Light Color Scheme"
+      },
+      {
+        "type": "color",
+        "id": "colors_light_bg",
+        "default": "#FFFFFF",
+        "label": "Background Color",
+        "info": "Also used for solid button text"
+      },
+      {
+        "type": "color",
+        "id": "colors_light_fg",
+        "default": "#000000",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "colors_light_button",
+        "default": "#000000",
+        "label": "Button color"
+      },
+      {
+        "type": "color",
+        "id": "colors_light_link",
+        "default": "#B08D75",
+        "label": "Link color"
+      },
+      {
+        "type": "header",
+        "content": "Dark Color Scheme"
+      },
+      {
+        "type": "color",
+        "id": "colors_dark_bg",
+        "default": "#000000",
+        "label": "Background Color",
+        "info": "Also used for solid button text"
+      },
+      {
+        "type": "color",
+        "id": "colors_dark_fg",
+        "default": "#FFFFFF",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "colors_dark_button",
+        "default": "#FFFFFF",
+        "label": "Button color"
+      },
+      {
+        "type": "color",
+        "id": "colors_dark_link",
+        "default": "#75B08D",
+        "label": "Link color"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
       },
       {

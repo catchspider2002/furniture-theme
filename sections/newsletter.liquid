@@ -7,7 +7,7 @@ Layout 3 - Center aligned -->
 
 <section class="newsletter px-16 py-20 lg:px-36 grid gap-12{% if section.settings.layout == "layout-3" %} center{% endif%} {% if section.settings.full_width == false %} mx-auto page-width{% endif%} 
 {% if section.settings.layout == "layout-1" %} xl:grid-flow-col items-center place-content-between{% endif%}
-color-{{ section.settings.color_scheme }}">
+scheme-{{ section.settings.color_scheme }}">
   <div>
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -59,7 +59,7 @@ color-{{ section.settings.color_scheme }}">
                   <small class="justify-center mb-0 md:justify-start form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
                 {%- endif -%}
               </div>
-              <button type="submit" class="button {% if section.settings.layout == "layout-3" %}place-self-center{% else %}place-self-start {% endif%}" name="commit">
+              <button type="submit" class="solid-button {% if section.settings.layout == "layout-3" %}place-self-center{% else %}place-self-start {% endif%}" name="commit">
                 <!-- {{ 'newsletter.button_label' | t }} -->
                 {{ block.settings.subscribeButton }}
               </button>
@@ -104,27 +104,23 @@ color-{{ section.settings.color_scheme }}">
       "id": "color_scheme",
       "options": [
         {
-          "value": "accent-1",
+          "value": "accent",
           "label": "t:global.color_scheme.options__1.label"
         },
         {
-          "value": "accent-2",
+          "value": "secondary",
           "label": "t:global.color_scheme.options__2.label"
         },
         {
-          "value": "background-1",
+          "value": "light",
           "label": "t:global.color_scheme.options__3.label"
         },
         {
-          "value": "background-2",
+          "value": "dark",
           "label": "t:global.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:global.color_scheme.options__5.label"
         }
       ],
-      "default": "background-1",
+      "default": "accent",
       "label": "t:global.color_scheme.label"
     },
     {

@@ -6,6 +6,86 @@
 }
 
 :root,
+.scheme-light {
+  --body-bg: var(--color-scheme-light-bg);
+  --body-text: var(--color-scheme-light-fg);
+  --link-text: var(--color-scheme-light-link);
+  --link-text-rgb: var(--color-scheme-light-link-rgb);
+  --button-bg: var(--color-scheme-light-button);
+  --button-bg-rgb: var(--color-scheme-light-button-rgb);
+  --button-text: var(--color-scheme-light-bg);
+
+  color: var(--body-text);
+  background-color: var(--body-bg);
+}
+.scheme-dark {
+  --body-bg: var(--color-scheme-dark-bg);
+  --body-text: var(--color-scheme-dark-fg);
+  --link-text: var(--color-scheme-dark-link);
+  --link-text-rgb: var(--color-scheme-dark-link-rgb);
+  --button-bg: var(--color-scheme-dark-button);
+  --button-bg-rgb: var(--color-scheme-dark-button-rgb);
+  --button-text: var(--color-scheme-dark-bg);
+  color: var(--body-text);
+  background-color: var(--body-bg);
+}
+.scheme-accent {
+  --body-bg: var(--color-scheme-accent-bg);
+  --body-text: var(--color-scheme-accent-fg);
+  --link-text: var(--color-scheme-accent-link);
+  --link-text-rgb: var(--color-scheme-accent-link-rgb);
+  --button-bg: var(--color-scheme-accent-button);
+  --button-bg-rgb: var(--color-scheme-accent-button-rgb);
+  --button-text: var(--color-scheme-accent-bg);
+  color: var(--body-text);
+  background-color: var(--body-bg);
+}
+.scheme-secondary {
+  --body-bg: var(--color-scheme-secondary-bg);
+  --body-text: var(--color-scheme-secondary-fg);
+  --link-text: var(--color-scheme-secondary-link);
+  --link-text-rgb: var(--color-scheme-secondary-link-rgb);
+  --button-bg: var(--color-scheme-secondary-button);
+  --button-bg-rgb: var(--color-scheme-secondary-button-rgb);
+  --button-text: var(--color-scheme-secondary-bg);
+  color: var(--body-text);
+  background-color: var(--body-bg);
+}
+
+.solid-button {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 0.5625rem 1.875rem 0.6875rem;
+  text-decoration: none;
+  border: 0;
+  border-radius: 0;
+  background-color: var(--button-bg);
+  box-shadow: 0 0 0 0.0625rem var(--button-bg);
+  color: var(--body-bg);
+  min-width: 7.5rem;
+  min-height: 2.8125rem;
+  transition: box-shadow var(--duration-short) ease;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 0.9375rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1.2;
+}
+
+.solid-button:hover {
+  background-color: rgba(var(--button-bg-rgb), 0.75);
+}
+
+.solid-button:focus,
+.solid-button:focus-visible {
+  box-shadow: 0 0 0 0.0625rem var(--button-bg), 0 0 0 0.1875rem var(--button-bg), 0 0 0.3125rem 0.25rem rgba(var(--body-bg), 0.3);
+}
+
+:root,
 .color-background-1 {
   --color-foreground: var(--color-base-text);
   --color-foreground-rgb: var(--color-base-text-rgb);

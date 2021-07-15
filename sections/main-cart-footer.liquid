@@ -30,9 +30,9 @@
           {%- case block.type -%}
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
-                <div class="totals">
-                  <h3 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h3>
-                  <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+                <div class="totals flex items-end justify-center md:justify-end">
+                  <h3>{{ 'sections.cart.subtotal' | t }}</h3>
+                  <p class="text-lg">{{ cart.total_price | money_with_currency }}</p>
                 </div>
 
                 <div>

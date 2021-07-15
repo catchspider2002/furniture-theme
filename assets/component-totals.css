@@ -1,9 +1,3 @@
-.totals {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
 .totals > * {
   font-size: 1rem;
   margin: 0;
@@ -17,16 +11,6 @@
   margin-left: 1.25rem;
 }
 
-.totals__subtotal-value {
-  font-size: 1.125rem;
-}
-
 .cart__ctas + .totals {
   margin-top: 1.25rem;
-}
-
-@media all and (min-width: 768px) {
-  .totals {
-    justify-content: flex-end;
-  }
 }
