@@ -28,18 +28,6 @@
         "label": "Text Color"
       },
       {
-        "type": "color",
-        "id": "colors_accent_button",
-        "default": "#FFFFFF",
-        "label": "Button color"
-      },
-      {
-        "type": "color",
-        "id": "colors_accent_link",
-        "default": "#CCCCCC",
-        "label": "Link color"
-      },
-      {
         "type": "header",
         "content": "Secondary Color Scheme"
       },
@@ -55,18 +43,6 @@
         "id": "colors_secondary_fg",
         "default": "#FFFFFF",
         "label": "Text Color"
-      },
-      {
-        "type": "color",
-        "id": "colors_secondary_button",
-        "default": "#FFFFFF",
-        "label": "Button color"
-      },
-      {
-        "type": "color",
-        "id": "colors_secondary_link",
-        "default": "#CCCCCC",
-        "label": "Link color"
       },
       {
         "type": "header",
@@ -86,18 +62,6 @@
         "label": "Text Color"
       },
       {
-        "type": "color",
-        "id": "colors_light_button",
-        "default": "#000000",
-        "label": "Button color"
-      },
-      {
-        "type": "color",
-        "id": "colors_light_link",
-        "default": "#B08D75",
-        "label": "Link color"
-      },
-      {
         "type": "header",
         "content": "Dark Color Scheme"
       },
@@ -113,18 +77,6 @@
         "id": "colors_dark_fg",
         "default": "#FFFFFF",
         "label": "Text Color"
-      },
-      {
-        "type": "color",
-        "id": "colors_dark_button",
-        "default": "#FFFFFF",
-        "label": "Button color"
-      },
-      {
-        "type": "color",
-        "id": "colors_dark_link",
-        "default": "#75B08D",
-        "label": "Link color"
       },
       {
         "type": "header",

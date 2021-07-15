@@ -252,6 +252,24 @@
   transition: background-color var(--duration-long) ease;
 }
 
+
+/*  Cards and announcement bar */
+
+:root,
+.color-background-1,
+.color-background-2 {
+  --color-card-hover: rgba(var(--color-base-text-rgb), 0.06);
+}
+
+.color-inverse {
+  --color-card-hover: rgba(var(--color-base-background-1-rgb), 0.06);
+}
+
+.color-accent-1,
+.color-accent-2 {
+  --color-card-hover: rgba(var(--color-base-solid-button-labels-rgb), 0.06);
+}
+
 .card:hover .card-colored .overlay-card {
   background-color: var(--color-card-hover);
 }

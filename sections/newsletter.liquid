@@ -1,8 +1,3 @@
-{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-
-<!-- Layout 1 - Space between in single line
-Layout 2 - Left aligned one below
-Layout 3 - Center aligned -->
 <!-- {% if section.settings.layout == "layout-2" %} {% endif%}  -->
 
 <section class="newsletter px-16 py-20 lg:px-36 grid gap-12{% if section.settings.layout == "layout-3" %} center{% endif%} {% if section.settings.full_width == false %} mx-auto page-width{% endif%} 
@@ -15,7 +10,7 @@ scheme-{{ section.settings.color_scheme }}">
         {%- when 'heading' -%}
           <h2 class="h1" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
         {%- when 'paragraph' -%}
-          <div class="rte max-w-6xl
+          <div class="max-w-6xl gray-text
           {% if section.settings.layout == "layout-3" %} mx-auto{% endif%}
            " {{ block.shopify_attributes }}>{{ block.settings.paragraph }}</div>
       </div>
@@ -35,7 +30,7 @@ scheme-{{ section.settings.color_scheme }}">
                     id="NewsletterForm--{{ section.id }}"
                     type="email"
                     name="contact[email]"
-                    class="field__input"
+                    class="tw-input"
                     value="{{ form.email }}"
                     aria-required="true"
                     autocorrect="off"
@@ -51,7 +46,7 @@ scheme-{{ section.settings.color_scheme }}">
                     placeholder="{{ 'newsletter.label' | t }}"
                     required
                   >
-                  <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                  <label class="tw-input-label" for="NewsletterForm--{{ section.id }}">
                     {{ 'newsletter.label' | t }}
                   </label>
                 </div>
@@ -59,12 +54,12 @@ scheme-{{ section.settings.color_scheme }}">
                   <small class="justify-center mb-0 md:justify-start form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
                 {%- endif -%}
               </div>
-              <button type="submit" class="solid-button {% if section.settings.layout == "layout-3" %}place-self-center{% else %}place-self-start {% endif%}" name="commit">
+              <button type="submit" class="tw-button {% if section.settings.layout == "layout-3" %}place-self-center{% else %}place-self-start {% endif%}" name="commit">
                 <!-- {{ 'newsletter.button_label' | t }} -->
                 {{ block.settings.subscribeButton }}
               </button>
               {%- if form.posted_successfully? -%}
-                <h3 class="justify-center mb-0 md:justify-start newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+                <h3 class="justify-center mb-0 md:justify-start md:absolute md:left-0 md:-bottom-2/3 mt-5 form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
               {%- endif -%}
             {% endform %}
           </div>
