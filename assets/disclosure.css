@@ -3,13 +3,13 @@
 }
 
 .disclosure__button {
-  align-items: center;
+  /* align-items: center;
   cursor: pointer;
   display: flex;
-  height: 2.5rem;
-  padding: 0 0.9375rem 0 0.9375rem;
-  font-size: 0.8125rem;
-  background-color: transparent;
+  height: 2.5rem; */
+  /* padding: 0 0.9375rem 0 0.9375rem; */
+  /* font-size: 0.8125rem;
+  background-color: transparent; */
 }
 
 .disclosure__list {
@@ -22,8 +22,8 @@
   min-width: 7.5rem;
   width: max-content;
   overflow-y: auto;
-  padding-bottom: 0.3125rem;
-  padding-top: 0.3125rem;
+  /* padding-bottom: 0.3125rem; */
+  /* padding-top: 0.3125rem; */
   position: absolute;
   bottom: 100%;
   transform: translateY(-0.625rem);

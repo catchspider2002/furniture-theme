@@ -33,7 +33,7 @@
 }
 </style>
 
-<footer class="footer color-{{ section.settings.color_scheme }}">
+<footer class="footer scheme-{{ section.settings.color_scheme }}">
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">
       {%- if section.blocks.size > 0 -%}
@@ -109,7 +109,7 @@
                     id="NewsletterForm--{{ section.id }}"
                     type="email"
                     name="contact[email]"
-                    class="field__input"
+                    class="tw-input"
                     value="{{ form.email }}"
                     aria-required="true"
                     autocorrect="off"
@@ -125,7 +125,7 @@
                     placeholder="{{ 'newsletter.label' | t }}"
                     required
                   >
-                  <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                  <label class="tw-input-label" for="NewsletterForm--{{ section.id }}">
                     {{ 'newsletter.label' | t }}
                   </label>
                 </div>
@@ -133,7 +133,7 @@
                   <small class="justify-center mb-0 md:justify-start form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
                 {%- endif -%}
               </div>
-              <button type="submit" class="button button--secondary mt-4 mb-0 mr-0 ml-0 md:ml-4 md:mt-0" name="commit" id="Subscribe">
+              <button type="submit" class="tw-button mt-4 mb-0 mr-0 ml-0 md:ml-4 md:mt-0" name="commit" id="Subscribe">
                 {{ 'newsletter.button_label' | t }}
               </button>
               {%- if form.posted_successfully? -%}
@@ -147,7 +147,7 @@
           <ul class="footer__list-social list-unstyled flex flex-wrap justify-center md:justify-end" role="list">
             {%- if settings.social_twitter_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_twitter_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_twitter_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-twitter' -%}
                   <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
                 </a>
@@ -155,7 +155,7 @@
             {%- endif -%}
             {%- if settings.social_facebook_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_facebook_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_facebook_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-facebook' -%}
                   <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
                 </a>
@@ -163,7 +163,7 @@
             {%- endif -%}
             {%- if settings.social_pinterest_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_pinterest_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_pinterest_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-pinterest' -%}
                   <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
                 </a>
@@ -171,7 +171,7 @@
             {%- endif -%}
             {%- if settings.social_instagram_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_instagram_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_instagram_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-instagram' -%}
                   <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
                 </a>
@@ -179,7 +179,7 @@
             {%- endif -%}
             {%- if settings.social_tiktok_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_tiktok_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_tiktok_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-tiktok' -%}
                   <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
                 </a>
@@ -187,7 +187,7 @@
             {%- endif -%}
             {%- if settings.social_tumblr_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_tumblr_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_tumblr_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-tumblr' -%}
                   <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
                 </a>
@@ -195,7 +195,7 @@
             {%- endif -%}
             {%- if settings.social_snapchat_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_snapchat_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_snapchat_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-snapchat' -%}
                   <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
                 </a>
@@ -203,7 +203,7 @@
             {%- endif -%}
             {%- if settings.social_youtube_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_youtube_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_youtube_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-youtube' -%}
                   <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
                 </a>
@@ -211,7 +211,7 @@
             {%- endif -%}
             {%- if settings.social_vimeo_link != blank -%}
               <li class="list-social__item">
-                <a href="{{ settings.social_vimeo_link }}" class="link link--text list-social__link" aria-describedby="a11y-external-message">
+                <a href="{{ settings.social_vimeo_link }}" class="tw-link items-center flex p-3" aria-describedby="a11y-external-message">
                   {%- render 'icon-vimeo' -%}
                   <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
                 </a>
@@ -231,7 +231,7 @@
           <noscript>
             {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
               <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
+                <h2 class="visually-hidden font-semibold" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
                 <select class="localization-selector link" name="country_code" aria-labelledby="FooterCountryLabelNoScript">
                   {%- for country in localization.available_countries -%}
                     <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
@@ -247,16 +247,16 @@
           <localization-form>
             {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
               <div class="no-js-hidden">
-                <h2 class="caption-large" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                <h2 class="text-sm tracking-wide leading-normal font-semibold" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
                 <div class="disclosure">
-                  <button type="button" class="disclosure__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="FooterCountryList" aria-describedby="FooterCountryLabel">
+                  <button type="button" class="py-0 px-4 items-center cursor-pointer flex h-10 bg-transparent localization-form__select localization-selector link link--text text-sm tracking-wide leading-normal" aria-expanded="false" aria-controls="FooterCountryList" aria-describedby="FooterCountryLabel">
                     {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
                     {% render 'icon-caret' %}
                   </button>
                   <ul id="FooterCountryList" role="list" class="disclosure__list list-unstyled" hidden>
                     {%- for country in localization.available_countries -%}
                       <li class="disclosure__item" tabindex="-1">
-                        <a class="link link--text disclosure__link caption-large{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                        <a class="link link--text disclosure__link text-sm tracking-wide leading-normal{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
                           {{ country.name }} <span class="localization-form__currency">({{ country.currency.iso_code }} {{ country.currency.symbol }})</span>
                         </a>
                       </li>
@@ -290,16 +290,16 @@
           <localization-form>
             {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
               <div class="no-js-hidden">
-                <h2 class="caption-large" id="FooterLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+                <h2 class="text-sm tracking-wide leading-normal" id="FooterLanguageLabel">{{ 'localization.language_label' | t }}</h2>
                 <div class="disclosure">
-                  <button type="button" class="disclosure__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="FooterLanguageList" aria-describedby="FooterLanguageLabel">
+                  <button type="button" class="py-0 px-4 items-center cursor-pointer flex h-10 bg-transparent localization-form__select localization-selector link link--text text-sm tracking-wide leading-normal" aria-expanded="false" aria-controls="FooterLanguageList" aria-describedby="FooterLanguageLabel">
                     {{ localization.language.endonym_name | capitalize }}
                     {% render 'icon-caret' %}
                   </button>
                   <ul id="FooterLanguageList" role="list" class="disclosure__list list-unstyled" hidden>
                     {%- for language in localization.available_languages -%}
                       <li class="disclosure__item" tabindex="-1">
-                        <a class="link link--text disclosure__link caption-large{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
+                        <a class="link link--text disclosure__link text-sm tracking-wide leading-normal{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
                           {{ language.endonym_name | capitalize }}
                         </a>
                       </li>
@@ -421,27 +421,23 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "accent-1",
+          "value": "accent",
           "label": "t:global.color_scheme.options__1.label"
         },
         {
-          "value": "accent-2",
+          "value": "secondary",
           "label": "t:global.color_scheme.options__2.label"
         },
         {
-          "value": "background-1",
+          "value": "light",
           "label": "t:global.color_scheme.options__3.label"
         },
         {
-          "value": "background-2",
+          "value": "dark",
           "label": "t:global.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:global.color_scheme.options__5.label"
         }
       ],
-      "default": "background-1",
+      "default": "light",
       "label": "t:global.color_scheme.label"
     },
     {
