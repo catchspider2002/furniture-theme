@@ -151,6 +151,11 @@
     text-align: left;
   }
 
+  .footer-block__newsletter::only-child .footer__newsletter {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
   .footer-block__newsletter:not(:only-child) .footer__newsletter {
     justify-content: flex-start;
     margin: 0;
