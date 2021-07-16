@@ -74,13 +74,16 @@
   letter-spacing: 0.08125rem;
   line-height: 1.2;
   font-weight: 600;
+  background-color: var(--button-bg);
 }
 .article-card__tag > a {
   text-decoration: none;
-  color: var(--color-base-solid-button-labels);
+  /* color: var(--color-base-solid-button-labels); */
+  color: var(--button-text);
 }
 .article-card__tag > a:hover {
-  color: rgba(var(--color-base-solid-button-labels-rgb), 0.85);
+  /* color: rgba(var(--color-base-solid-button-labels-rgb), 0.85); */
+  color: rgba(var(--button-text-rgb), 0.85);
 }
 
 .article-template__link {

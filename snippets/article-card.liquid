@@ -34,7 +34,7 @@
       </div>
     {%- endif -%}
 
-    <div class="article-card__info">
+    <div class="flex flex-col flex-grow pt-6 px-6 pb-7 md:pt-10 md:pb-10 md:px-12">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'title'-%}
@@ -42,7 +42,7 @@
               {%- if block.settings.show_labels -%}
                 <div class="article-card__tags">
                 {% for tag in article.tags %}
-                    <span class="color-accent-1 article-card__tag">{{ tag | link_to_tag: tag }}</span>                    
+                    <span class="article-card__tag">{{ tag | link_to_tag: tag }}</span>                    
                 {% endfor %}
                 </div>
               {%- endif -%}
@@ -50,12 +50,12 @@
                 <a class="full-unstyled-link" href="{{ article.url }}" >{{ article.title | escape }}</a>
               </h2>
               {%- if block.settings.show_date -%}
-                <span class="circle-divider caption-with-letter-spacing pt-2">
+                <span class="circle-divider caption-with-letter-spacing pt-4 gray-text">
                   {{- article.published_at | time_tag: format: 'month_year' -}}
                 </span>
               {%- endif -%}
               {%- if block.settings.show_author -%}
-                <span class="caption-with-letter-spacing pt-2">{{ article.author -}}</span>
+                <span class="caption-with-letter-spacing pt-4 gray-text">{{ article.author -}}</span>
               {%- endif -%}
             </header>
 
@@ -72,7 +72,7 @@
 
           {%- when 'link'-%}
             <div class="article-card__footer" {{ block.shopify_attributes }}>
-              <a href="{{ article.url }}" class="link article-card__link" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title | escape }}">
+              <a href="{{ article.url }}" class="tw-link article-card__link" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title | escape }}">
                 {{ 'blogs.article.read_more' | t }}
               </a>
 

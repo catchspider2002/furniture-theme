@@ -20,7 +20,7 @@
           if section.blocks.size == 9
             assign footer_grid_class = 'grid--3-col-tablet'
           elsif section.blocks.size > 6
-            assign footer_grid_class = 'grid--4col-desktop'
+            assign footer_grid_class = 'grid--4-col-desktop'
           elsif section.blocks.size > 4
             assign footer_grid_class = 'grid--3-col-tablet'
           endif
@@ -80,7 +80,7 @@
             {%- if section.settings.newsletter_heading != blank -%}
               <h2 class="mt-0 mb-5 text-base lg:text-lg">{{ section.settings.newsletter_heading | escape }}</h2>
             {%- endif -%}
-            {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter flex flex-col justify-center items-center w-full relative md:flex-row md:items-start md:max-w-lg' -%}
+            {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter flex flex-col justify-center items-center w-full relative md:flex-row md:items-start md:max-w-lg mx-auto' -%}
               <input type="hidden" name="contact[tags]" value="newsletter">
               <div class="w-72 md:w-full">
                 <div class="field">
@@ -121,9 +121,9 @@
             {%- endform -%}
           </div>
         {%- endif -%}
-
+        
         {%- if section.settings.show_social -%}
-          <ul class="footer__list-social list-unstyled flex flex-wrap justify-center md:justify-end" role="list">
+          <ul class="footer__list-social list-unstyled flex flex-wrap  justify-center {% if section.settings.newsletter_enable %}md:justify-end{% else %}md:justify-center{% endif %} mx-auto" role="list">
             {%- if settings.social_twitter_link != blank -%}
               <li class="list-social__item">
                 <a href="{{ settings.social_twitter_link }}" class="tw-link items-center flex p-3 transform duration-300 hover:scale-110" aria-describedby="a11y-external-message">
@@ -324,7 +324,20 @@
       };
       this.elements.button.addEventListener('click', this.openSelector.bind(this));
       this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+      this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
       this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+    }
+
+    hidePanel() {
+      this.elements.button.setAttribute('aria-expanded', 'false');
+      this.elements.panel.setAttribute('hidden', true);
+    }
+
+    onContainerKeyUp(event) {
+      if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+      this.hidePanel();
+      this.elements.button.focus();
     }
 
     onItemClick(event) {
@@ -342,8 +355,9 @@
     closeSelector(event) {
       const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
       if (event.relatedTarget === null || shouldClose) {
-        this.elements.button.setAttribute('aria-expanded', 'false');
-        this.elements.panel.setAttribute('hidden', true);
+        //this.elements.button.setAttribute('aria-expanded', 'false');
+        //this.elements.panel.setAttribute('hidden', true);
+        this.hidePanel();
       }
     }
   }

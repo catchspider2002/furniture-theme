@@ -1,6 +1,6 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="scheme-{{ section.settings.color_scheme }} article-template" itemscope itemtype="http://schema.org/BlogPosting">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when 'featured_image'-%}
@@ -31,16 +31,16 @@
             {%- if block.settings.blog_show_labels -%}
               <div class="article-card__tags">
               {% for tag in article.tags %}
-              <span class="color-accent-1 article-card__tag">{{ tag | link_to_tag: tag }}</span>      
+              <span class="article-card__tag">{{ tag | link_to_tag: tag }}</span>      
               {% endfor %}
               </div>
             {%- endif -%}
             <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
             {%- if block.settings.blog_show_date -%}
-              <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'month_year' }}</span>
+              <span class="circle-divider caption-with-letter-spacing gray-text" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'month_year' }}</span>
             {%- endif -%}
             {%- if block.settings.blog_show_author -%}
-              <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span class="caption-with-letter-spacing gray-text" itemprop="author" itemscope itemtype="http://schema.org/Person">
                 <span itemprop="name">{{ article.author }}</span>
               </span>
             {%- endif -%}
@@ -59,7 +59,7 @@
   {%- endfor -%}
 
   <div class="element-margin center">
-    <a href="{{ blog.url }}" class="article-template__link link{% if blog.comments_enabled? == false %} spaced-section{% endif %}">
+    <a href="{{ blog.url }}" class="article-template__link tw-link{% if blog.comments_enabled? == false %} spaced-section{% endif %}">
       {% render 'icon-arrow' %}
       {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
     </a>
@@ -215,6 +215,31 @@
 {
   "name": "t:sections.main-article.name",
   "tag": "section",
+  "settings": [
+  {
+    "type": "select",
+    "id": "color_scheme",
+    "options": [
+      {
+        "value": "accent",
+        "label": "t:global.color_scheme.options__1.label"
+      },
+      {
+        "value": "secondary",
+        "label": "t:global.color_scheme.options__2.label"
+      },
+      {
+        "value": "light",
+        "label": "t:global.color_scheme.options__3.label"
+      },
+      {
+        "value": "dark",
+        "label": "t:global.color_scheme.options__4.label"
+      }
+    ],
+    "default": "accent",
+    "label": "t:global.color_scheme.label"
+  }],
   "blocks": [
     {
       "type": "featured_image",

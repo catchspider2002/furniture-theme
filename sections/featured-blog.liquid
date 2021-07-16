@@ -9,7 +9,7 @@
 
 {{ 'section-featured-blog.css' | asset_url | stylesheet_tag }}
 
-<div class="blog{% if section.settings.soft_background %} background-secondary{% endif %}{% if section.settings.heading == blank %} no-heading{% endif %}">
+<div class="scheme-{{ section.settings.color_scheme }} blog{% if section.settings.soft_background %} background-secondary{% endif %}{% if section.settings.heading == blank %} no-heading{% endif %}">
   <div class="page-width-desktop">
     <div class="title-wrapper-with-link{% if section.settings.heading == blank %} title-wrapper-with-link--no-heading{% endif %} title-wrapper--self-padded-tablet-down">
       <h2 class="m-0">{{ section.settings.heading | escape }}</h2>
@@ -79,6 +79,30 @@
   "tag": "section",
   "class": "spaced-section spaced-section--full-width",
   "settings": [
+  {
+    "type": "select",
+    "id": "color_scheme",
+    "options": [
+      {
+        "value": "accent",
+        "label": "t:global.color_scheme.options__1.label"
+      },
+      {
+        "value": "secondary",
+        "label": "t:global.color_scheme.options__2.label"
+      },
+      {
+        "value": "light",
+        "label": "t:global.color_scheme.options__3.label"
+      },
+      {
+        "value": "dark",
+        "label": "t:global.color_scheme.options__4.label"
+      }
+    ],
+    "default": "light",
+    "label": "t:global.color_scheme.label"
+  },
     {
       "type": "text",
       "id": "heading",

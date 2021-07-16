@@ -6,6 +6,7 @@
 .scheme-accent,
 .scheme-secondary {
   --border-radius: 0.15625rem;
+  --color-text-85: rgba(var(--body-text-rgb), 0.85);
   --color-text-75: rgba(var(--body-text-rgb), 0.75);
   --color-text-70: rgba(var(--body-text-rgb), 0.7);
   --color-text-55: rgba(var(--body-text-rgb), 0.55);
@@ -76,6 +77,10 @@
 
 .gray-text {
   color: var(--color-text-75);
+}
+
+.color-text-50 {
+  color: var(--color-text-50);
 }
 
 .light-border {
@@ -667,7 +672,7 @@ blockquote {
 }
 
 .caption {
-  font-size: 0.625rem;
+  font-size: 0.8rem;
   letter-spacing: 0.04375rem;
   line-height: 1.7;
 }
@@ -679,7 +684,7 @@ blockquote {
 }
 
 .caption-with-letter-spacing {
-  font-size: 0.625rem;
+  font-size: 0.8rem;
   letter-spacing: 0.08125rem;
   line-height: 1.2;
   text-transform: uppercase;
@@ -2025,7 +2030,7 @@ input[type="checkbox"] {
 
 .header__icon:hover .icon,
 .modal__close-button:hover .icon {
-  transform: scale(1.07);
+  transform: scale(1.1);
 }
 
 .header__icon .icon {
@@ -2164,7 +2169,7 @@ details[open] > .header__icon--menu .icon-hamburger {
 .js details[open]:not(.menu-opening) > .header__icon--menu .icon-hamburger {
   visibility: visible;
   opacity: 1;
-  transform: scale(1.07);
+  transform: scale(1.1);
 }
 
 .header__inline-menu details[open] > .header__submenu {
@@ -3151,6 +3156,10 @@ video {
   max-width: 100%;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .transform {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -3399,6 +3408,11 @@ video {
   padding-right: 1.25rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -3432,6 +3446,14 @@ video {
   padding-top: 0.75rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
 .pt-28 {
   padding-top: 7rem;
 }
@@ -3446,6 +3468,10 @@ video {
 
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pb-7 {
+  padding-bottom: 1.75rem;
 }
 
 .pb-44 {
@@ -3714,6 +3740,10 @@ video {
     justify-content: flex-end;
   }
 
+  .md\:justify-center {
+    justify-content: center;
+  }
+
   .md\:gap-16 {
     gap: 4rem;
   }
@@ -3723,8 +3753,21 @@ video {
     padding-right: 0px;
   }
 
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   .md\:pt-0 {
     padding-top: 0px;
+  }
+
+  .md\:pt-10 {
+    padding-top: 2.5rem;
+  }
+
+  .md\:pb-10 {
+    padding-bottom: 2.5rem;
   }
 
   .md\:text-right {
