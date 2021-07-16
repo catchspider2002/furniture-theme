@@ -75,6 +75,12 @@
 .light-border {
   border-color: rgba(var(--body-text-rgb), 0.2);
 }
+.medium-border {
+  border-color: rgba(var(--body-text-rgb), 0.5);
+}
+.dark-border {
+  border-color: rgba(var(--body-text-rgb), 0.8);
+}
 
 /* Button */
 
@@ -197,6 +203,7 @@
 
 /* Link */
 
+a,
 .tw-link {
   cursor: pointer;
   display: inline-block;
@@ -206,11 +213,19 @@
   /* text-underline-offset: 0.1875rem; */
   color: var(--link-text);
   background-color: transparent;
+  text-decoration: none;
+}
+
+.tw-link {
   font-size: 0.875rem;
 }
 
+a:hover,
 .tw-link:hover {
   color: var(--link-text-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.1rem;
 }
 
 :root,
