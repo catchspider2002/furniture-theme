@@ -146,7 +146,7 @@
 }
 
 .article-template__comments-comment {
-  color: var(--color-foreground-75);
+  color: var(--color-text-75);
   background-color: var(--color-background);
   margin-bottom: 0.9375rem;
   padding: 1.25rem 1.25rem 0.9375rem;

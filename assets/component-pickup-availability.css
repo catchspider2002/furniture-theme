@@ -30,14 +30,14 @@ pickup-availability[available] {
 
 .pickup-availability-button {
   background-color: transparent;
-  color: var(--color-foreground-75);
+  color: var(--color-text-75);
   letter-spacing: 0.0375rem;
   padding: 0 0 0.125rem;
   text-decoration: underline;
 }
 
 .pickup-availability-button:hover {
-  color: var(--color-foreground);
+  color: var(--body-text);
 }
 
 .pickup-availability-info * {
@@ -46,7 +46,7 @@ pickup-availability[available] {
 
 pickup-availability-drawer {
   background-color: var(--color-background);
-  border: 0.0625rem solid var(--color-foreground-20);
+  border: 0.0625rem solid var(--color-text-20);
   height: 100%;
   opacity: 0;
   overflow-y: auto;
@@ -106,7 +106,7 @@ pickup-availability-drawer[open] {
 }
 
 .pickup-availability-drawer-button:hover {
-  color: var(--color-foreground-75);
+  color: var(--color-text-75);
 }
 
 .pickup-availability-variant {
@@ -121,12 +121,12 @@ pickup-availability-drawer[open] {
 }
 
 .pickup-availability-list__item {
-  border-bottom: 0.0625rem solid var(--color-foreground-20);
+  border-bottom: 0.0625rem solid var(--color-text-20);
   padding: 1.25rem 0;
 }
 
 .pickup-availability-list__item:first-child {
-  border-top: 0.0625rem solid var(--color-foreground-20);
+  border-top: 0.0625rem solid var(--color-text-20);
 }
 
 .pickup-availability-list__item > * {

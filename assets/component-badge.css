@@ -9,6 +9,6 @@
   text-align: center;
   background-color: var(--color-badge-background);
   border-color: var(--color-badge-border);
-  color: var(--color-foreground);
+  color: var(--body-text);
   word-break: break-word;
 }

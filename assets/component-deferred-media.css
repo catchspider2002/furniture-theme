@@ -37,9 +37,9 @@
 
 .deferred-media__poster-button {
   background-color: var(--color-background);
-  border: 0.0625rem solid var(--color-foreground-10);
+  border: 0.0625rem solid var(--color-text-10);
   border-radius: 50%;
-  color: var(--color-foreground);
+  color: var(--body-text);
   display: flex;
   align-items: center;
   justify-content: center;

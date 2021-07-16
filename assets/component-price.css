@@ -6,7 +6,7 @@
   font-size: 1rem;
   letter-spacing: 0.0625rem;
   line-height: 1.5;
-  color: var(--color-foreground);
+  color: var(--body-text);
 }
 
 .price.price--unavailable {
@@ -78,7 +78,7 @@
 
 .price--on-sale .price-item--regular {
   text-decoration: line-through;
-  color: var(--color-foreground-75);
+  color: var(--color-text-75);
 }
 
 .unit-price {
@@ -87,5 +87,5 @@
   line-height: 1.2;
   margin-top: 0.125rem;
   text-transform: uppercase;
-  color: var(--color-foreground-70);
+  color: var(--color-text-70);
 }

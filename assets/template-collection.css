@@ -129,7 +129,7 @@
   padding: 0 0.9375rem;
   min-width: 15.625rem;
   margin-top: 1.5rem;
-  border: 0.0625rem solid var(--color-foreground-55);
+  border: 0.0625rem solid var(--color-text-55);
 }
 
 .collection-filters__summary::after {
@@ -160,7 +160,7 @@
 }
 
 .collection-filters__disclosure a {
-  color: var(--color-foreground);
+  color: var(--body-text);
   cursor: pointer;
   display: block;
   padding: 0.75rem;
@@ -212,19 +212,19 @@
 }
 
 .facets__disclosure {
-  border: 1px solid var(--color-foreground-55);
+  border: 1px solid var(--color-text-55);
   margin: 0 0 0.3125rem 0.3125rem;
   transition: box-shadow var(--duration-short) ease;
 }
 
 .facets__disclosure:hover {
-  box-shadow: 0 0 0 0.0625rem var(--color-foreground-55);
+  box-shadow: 0 0 0 0.0625rem var(--color-text-55);
 }
 
 .facets__summary {
   padding: 0.75rem 2.5rem 0.75rem 0.9375rem;
   font-size: 0.75rem;
-  color: var(--color-foreground-75);
+  color: var(--color-text-75);
 }
 
 .facets__summary > span {
@@ -234,7 +234,7 @@
 .facets__display {
   background-color: var(--color-background);
   position: absolute;
-  border: 1px solid var(--color-foreground-20);
+  border: 1px solid var(--color-text-20);
   top: calc(100% + 0.3125rem);
   left: -0.0625rem;
   width: 21.875rem;
@@ -243,7 +243,7 @@
 }
 
 .facets__header {
-  border-bottom: 1px solid var(--color-foreground-20);
+  border-bottom: 1px solid var(--color-text-20);
   padding: 0.9375rem 1.25rem;
   display: flex;
   justify-content: space-between;
@@ -308,7 +308,7 @@
 }
 
 .facet-checkbox--disabled {
-  color: var(--color-foreground-40);
+  color: var(--color-text-40);
 }
 
 .facets__price {
@@ -350,8 +350,8 @@ button.facets__button {
 }
 
 a.active-facets__button {
-  color: var(--color-foreground);
-  box-shadow: 0 0 0 0.0625rem var(--color-foreground);
+  color: var(--body-text);
+  box-shadow: 0 0 0 0.0625rem var(--body-text);
   border-radius: 1.625rem;
   font-size: 0.75rem;
   min-height: 0;
@@ -361,25 +361,25 @@ a.active-facets__button {
 }
 
 a.active-facets__button {
-  box-shadow: 0 0 0 0.0625rem var(--color-foreground);
+  box-shadow: 0 0 0 0.0625rem var(--body-text);
 }
 
 a.active-facets__button:hover {
-  box-shadow: 0 0 0 0.125rem var(--color-foreground);
+  box-shadow: 0 0 0 0.125rem var(--body-text);
 }
 
 a.active-facets__button--light {
-  box-shadow: 0 0 0 0.0625rem var(--color-foreground-20);
+  box-shadow: 0 0 0 0.0625rem var(--color-text-20);
 }
 
 a.active-facets__button--light:hover {
-  box-shadow: 0 0 0 0.125rem var(--color-foreground-40);
+  box-shadow: 0 0 0 0.125rem var(--color-text-40);
 }
 
 a.active-facets__button:focus-visible,
 a.active-facets__button:focus {
-  box-shadow: 0 0 0 0.0625rem var(--color-foreground-20),
-    0 0 0 0.125rem var(--color-background), 0 0 0 0.25rem var(--color-foreground);
+  box-shadow: 0 0 0 0.0625rem var(--color-text-20),
+    0 0 0 0.125rem var(--color-background), 0 0 0 0.25rem var(--body-text);
   outline: none;
 }
 
@@ -441,7 +441,7 @@ a.active-facets__button:focus {
   right: 0;
   bottom: 0;
   z-index: 100;
-  background-color: var(--color-foreground-50);
+  background-color: var(--color-text-50);
   pointer-events: none;
 }
 
@@ -471,7 +471,7 @@ a.active-facets__button:focus {
 
 .mobile-facets__header {
   background-color: var(--color-background);
-  border-bottom: 0.0625rem solid var(--color-foreground-20);
+  border-bottom: 0.0625rem solid var(--color-text-20);
   padding: 0.625rem 1.5625rem;
   text-align: center;
   display: flex;
@@ -495,7 +495,7 @@ a.active-facets__button:focus {
 }
 
 .mobile-facets__count {
-  color: var(--color-foreground-70);
+  color: var(--color-text-70);
   font-size: 0.8125rem;
   margin: 0;
   flex-grow: 1;
@@ -589,7 +589,7 @@ details[open] .mobile-facets__close--no-js svg {
 }
 
 .no-js .mobile-facets__details {
-  border-bottom: 1px solid var(--color-foreground-4);
+  border-bottom: 1px solid var(--color-text-4);
 }
 
 .mobile-facets__highlight {
@@ -606,7 +606,7 @@ details[open] .mobile-facets__close--no-js svg {
   right: 0px;
   bottom: 0px;
   display: block;
-  background-color: var(--color-foreground-4);
+  background-color: var(--color-text-4);
 }
 
 .mobile-facets__summary {
@@ -631,7 +631,7 @@ details[open] .mobile-facets__close--no-js svg {
   bottom: 0;
   left: 0;
   background-color: var(--color-background);
-  border: 0.0625rem solid var(--color-foreground-20);
+  border: 0.0625rem solid var(--color-text-20);
   border-top: none;
   border-bottom: none;
   z-index: 3;
@@ -709,7 +709,7 @@ input.mobile-facets__checkbox {
 
 .mobile-facets__footer {
   background-color: var(--color-background);
-  border-top: 0.0625rem solid var(--color-foreground-20);
+  border-top: 0.0625rem solid var(--color-text-20);
   padding: 1.25rem;
   bottom: 0;
   position: sticky;

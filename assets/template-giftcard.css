@@ -29,7 +29,7 @@ html {
 
 body {
   background-color: var(--color-background-1);
-  color: var(--color-foreground);
+  color: var(--body-text);
   font-size: 0.9375rem;
   letter-spacing: 0.04375rem;
   line-height: 1.9;
@@ -222,7 +222,7 @@ h2,
 .gift-card__number {
   background-color: var(--color-background);
   border: none;
-  color: var(--color-foreground);
+  color: var(--body-text);
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.6;

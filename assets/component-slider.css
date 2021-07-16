@@ -55,7 +55,7 @@ slider-component {
 /* Scrollbar */
 
 .slider {
-  scrollbar-color: var(--color-foreground) var(--color-foreground-4);
+  scrollbar-color: var(--body-text) var(--color-text-4);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -76,13 +76,13 @@ slider-component {
 }
 
 .slider::-webkit-scrollbar-thumb {
-  background-color: var(--color-foreground);
+  background-color: var(--body-text);
   border-radius: 0.25rem;
   border: 0;
 }
 
 .slider::-webkit-scrollbar-track {
-  background: var(--color-foreground-4);
+  background: var(--color-text-4);
   border-radius: 0.25rem;
 }
 
@@ -94,7 +94,7 @@ slider-component .slider-buttons {
 }
 
 .slider-buttons.slider-buttons--overlay {
-  border: 0.0625rem solid var(--color-foreground-8);
+  border: 0.0625rem solid var(--color-text-8);
   background-color: var(--color-background);
 }
 
@@ -129,8 +129,8 @@ slider-component .slider-buttons {
 }
 
 .slider-button {
-  color: var(--color-foreground-75);
-  border: 0.0625rem solid var(--color-foreground-8);
+  color: var(--color-text-75);
+  border: 0.0625rem solid var(--color-text-8);
   background-color: var(--color-background);
   cursor: pointer;
   width: 44px;
@@ -138,8 +138,8 @@ slider-component .slider-buttons {
 }
 
 .slider-button:not([disabled]):hover {
-  color: var(--color-foreground);
-  border-color: var(--color-foreground);
+  color: var(--body-text);
+  border-color: var(--body-text);
   z-index: 1;
 }
 
@@ -161,7 +161,7 @@ slider-component .slider-buttons {
 }
 
 .slider-button[disabled] .icon {
-  color: var(--color-foreground-30);
+  color: var(--color-text-30);
 }
 
 .slider-button--next .icon {

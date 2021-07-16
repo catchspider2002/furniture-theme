@@ -1,31 +1,31 @@
 .shopify-model-viewer-ui .shopify-model-viewer-ui__controls-area {
   background: var(--color-background);
-  border-color: var(--color-foreground-4);
+  border-color: var(--color-text-4);
 }
 
 .shopify-model-viewer-ui .shopify-model-viewer-ui__button {
-  color: var(--color-foreground-75);
+  color: var(--color-text-75);
 }
 
 .shopify-model-viewer-ui .shopify-model-viewer-ui__button--control:hover {
-  color: var(--color-foreground-55);
+  color: var(--color-text-55);
 }
 
 .shopify-model-viewer-ui .shopify-model-viewer-ui__button--control:active,
 .shopify-model-viewer-ui .shopify-model-viewer-ui__button--control.focus-visible:focus {
-  color: var(--color-foreground-55);
-  background: var(--color-foreground-4);
+  color: var(--color-text-55);
+  background: var(--color-text-4);
 }
 
 .shopify-model-viewer-ui .shopify-model-viewer-ui__button--control:not(:last-child):after {
-  border-color: var(--color-foreground-4);
+  border-color: var(--color-text-4);
 }
 
 .shopify-model-viewer-ui .shopify-model-viewer-ui__button--poster {
   border-radius: 50%;
-  color: var(--color-foreground);
+  color: var(--body-text);
   background: var(--color-background);
-  border-color: var(--color-foreground-10);
+  border-color: var(--color-text-10);
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--duration-short) ease, color var(--duration-short) ease;
 }

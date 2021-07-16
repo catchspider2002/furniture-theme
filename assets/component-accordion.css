@@ -18,8 +18,8 @@
 .accordion {
   margin-top: 1.5625rem;
   margin-bottom: 0;
-  border-top: 0.0625rem solid var(--color-foreground-20);
-  border-bottom: 0.0625rem solid var(--color-foreground-20);
+  border-top: 0.0625rem solid var(--color-text-20);
+  border-bottom: 0.0625rem solid var(--color-text-20);
 }
 
 .accordion__title {
@@ -34,7 +34,7 @@
   align-self: center;
   min-width: 1rem;
   margin-right: 0.625rem;
-  fill: var(--color-foreground);
+  fill: var(--body-text);
 }
 
 .accordion details[open] > summary .icon-caret {

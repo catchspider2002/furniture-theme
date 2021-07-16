@@ -9,8 +9,8 @@
 }
 
 .card.card--soft {
-  background-color: var(--color-foreground-4);
-  color: var(--color-foreground);
+  background-color: var(--color-text-4);
+  color: var(--body-text);
 }
 
 .card__text {
@@ -52,7 +52,7 @@
 }
 
 .card--product {
-  border: 0.0625rem solid var(--color-foreground-4);
+  border: 0.0625rem solid var(--color-text-4);
   position: relative;
 }
 
@@ -61,11 +61,11 @@
 }
 
 .card--light-border {
-  border: 0.0625rem solid var(--color-foreground-4);
+  border: 0.0625rem solid var(--color-text-4);
 }
 
 .card--light-border:hover {
-  border: 0.0625rem solid var(--color-foreground-30);
+  border: 0.0625rem solid var(--color-text-30);
   box-shadow: none;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .card-colored.color-background-1 {
-  background-color: var(--color-foreground-4);
+  background-color: var(--color-text-4);
 }
 
 .card--media .card__text-spacing {
@@ -182,11 +182,11 @@
 
 .card-information__wrapper > * {
   line-height: 1.4;
-  color: var(--color-foreground);
+  color: var(--body-text);
 }
 
 .card-information__wrapper > .price {
-  color: var(--color-foreground);
+  color: var(--body-text);
 }
 
 .card-information__wrapper > *:not(.visually-hidden:first-child) + * {

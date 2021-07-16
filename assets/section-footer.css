@@ -1,5 +1,5 @@
 .footer {
-  border-top: 0.0625rem solid var(--color-foreground-20);
+  border-top: 0.0625rem solid var(--color-text-20);
 }
 
 .footer:not(.color-background-1) {
@@ -64,7 +64,6 @@
     padding-right: 0;
     row-gap: 0.9375rem;
   }
-
 }
 
 .footer__localization:empty + .footer__column--info {
@@ -208,7 +207,7 @@
   padding: 0.625rem 0;
 }
 
-.localization-form:only-child .button,
+.localization-form:only-child button,
 .localization-form:only-child .localization-form__select {
   margin: 0.625rem 0.625rem 0.3125rem;
   flex-grow: 1;
@@ -217,7 +216,7 @@
 
 .footer__localization h2 {
   margin: 0.625rem 0.625rem 0.3125rem;
-  /* color: var(--color-foreground-75); */
+  /* color: var(--color-text-75); */
 }
 
 @media screen and (min-width: 768px) {
@@ -268,7 +267,7 @@
 }
 
 .localization-form__select {
-  box-shadow: 0 0 0 0.0625rem var(--color-foreground-55);
+  box-shadow: 0 0 0 0.0625rem var(--color-text-55);
   position: relative;
   margin-bottom: 0.9375rem;
   border: 0;
@@ -299,7 +298,7 @@ noscript .localization-form__select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  color: var(--color-foreground);
+  color: var(--body-text);
   width: 100%;
   padding-right: 2.5rem;
   padding-bottom: 0.9375rem;
@@ -386,17 +385,17 @@ footer details[open] summary ~ * {
 }
 
 .footer-block__details-content .list-menu__item--link {
-  color: var(--color-foreground-75);
+  color: var(--color-text-75);
 }
 
 .footer-block__details-content .list-menu__item--active {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: var(--color-foreground);
+  color: var(--body-text);
 }
 
 @media screen and (min-width: 768px) {
   .footer-block__details-content .list-menu__item--link:hover {
-    color: var(--color-foreground);
+    color: var(--body-text);
     text-decoration: underline;
     text-underline-offset: 0.1875rem;
   }
@@ -439,7 +438,7 @@ footer details[open] summary ~ * {
 }
 
 .disclosure__list {
-  border: 1px solid var(--color-foreground-20);
+  border: 1px solid var(--color-text-20);
   font-size: 0.875rem;
   margin-top: -0.3125rem;
   min-height: 5.125rem;
@@ -454,9 +453,9 @@ footer details[open] summary ~ * {
   bottom: 100%;
   transform: translateY(-0.625rem);
   z-index: 2;
-  background-color: var(--color-background);
+  background-color: var(--button-bg);
+  color: var(--button-text);
 }
-
 
 .disclosure__link {
   display: block;
@@ -467,13 +466,16 @@ footer details[open] summary ~ * {
 
 .footer .disclosure__link {
   padding: 0.59375rem 2.1875rem 0.59375rem 1.25rem;
-  color: var(--color-foreground-75);
+  color: var(--button-text);
 }
 
 .footer .disclosure__link:hover {
-  color: var(--color-foreground);
+  background-color: rgba(var(--button-text-rgb), 0.1);
+  text-decoration: none;
 }
 
 .footer .disclosure__link--active {
-  text-decoration: underline;
+  text-decoration: none;
+  background-color: rgba(var(--button-text-rgb), 0.2);
+  font-weight: 600;
 }

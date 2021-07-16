@@ -46,7 +46,7 @@ cart-items {
 .cart__items {
   position: relative;
   padding-bottom: 1.875rem;
-  border-bottom: 0.0625rem solid var(--color-foreground-20);
+  border-bottom: 0.0625rem solid var(--color-text-20);
 }
 
 .cart__items--disabled {
@@ -79,7 +79,7 @@ cart-items {
   line-height: 1;
   height: 1.125rem;
   margin-bottom: 1.25rem;
-  color: var(--color-foreground-75);
+  color: var(--color-text-75);
 }
 
 .cart__note .field__input {
