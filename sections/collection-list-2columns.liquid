@@ -18,7 +18,7 @@
       <a{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %} href="{{ block.settings.collection.url }}"{% endif %}
         class="h-full card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} card--light-border"
       >
-        <div class="h-full card--stretch card-colored color-{{ section.settings.color_scheme }}">
+        <div class="h-full card--stretch card-colored scheme-{{ section.settings.color_scheme }}">
           {%- if block.settings.collection.image != blank -%}
             <div class="relative h-full">
               <div class="h-full media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect overflow-hidden"
@@ -109,27 +109,23 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "accent-1",
+          "value": "accent",
           "label": "t:global.color_scheme.options__1.label"
         },
         {
-          "value": "accent-2",
+          "value": "secondary",
           "label": "t:global.color_scheme.options__2.label"
         },
         {
-          "value": "background-1",
+          "value": "light",
           "label": "t:global.color_scheme.options__3.label"
         },
         {
-          "value": "background-2",
+          "value": "dark",
           "label": "t:global.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:global.color_scheme.options__5.label"
         }
       ],
-      "default": "background-1",
+      "default": "light",
       "label": "t:global.color_scheme.label"
     },
     {

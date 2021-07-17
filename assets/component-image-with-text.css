@@ -2,9 +2,9 @@
   margin-top: 3.125rem;
 }
 
-.image-with-text:not(.color-scheme-background-1) {
+/* .image-with-text:not(.color-scheme-background-1) {
   margin-bottom: 3.125rem;
-}
+} */
 
 @media screen and (min-width: 768px) {
   .image-with-text {

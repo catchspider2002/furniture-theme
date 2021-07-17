@@ -4,7 +4,7 @@
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="rich-text{% if section.settings.full_width %} rich-text--full-width{% endif %} color-{{ section.settings.color_scheme }}">
+<div class="rich-text{% if section.settings.full_width %} rich-text--full-width{% endif %} scheme-{{ section.settings.color_scheme }}">
   <div class="rich-text__blocks">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -32,27 +32,23 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "accent-1",
+          "value": "accent",
           "label": "t:global.color_scheme.options__1.label"
         },
         {
-          "value": "accent-2",
+          "value": "secondary",
           "label": "t:global.color_scheme.options__2.label"
         },
         {
-          "value": "background-1",
+          "value": "light",
           "label": "t:global.color_scheme.options__3.label"
         },
         {
-          "value": "background-2",
+          "value": "dark",
           "label": "t:global.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:global.color_scheme.options__5.label"
         }
       ],
-      "default": "background-1",
+      "default": "light",
       "label": "t:global.color_scheme.label"
     },
     {
