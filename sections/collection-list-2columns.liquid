@@ -5,10 +5,11 @@
 
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
-<section class="{% if section.settings.full_width == false %} mx-auto page-width{% endif%}">
-    <h2 class="mx-5 mb-5 mt-16{% if section.settings.title == blank %} hidden{% endif %}">{{ section.settings.title | escape }}</h2>
+<section class="scheme-{{ section.settings.color_scheme }}">
+  <div class="{% if section.settings.full_width == false %} mx-auto page-width{% endif%}{% if section.settings.title != blank %} py-16{% endif %}">
+    <h2 class="mx-5 mb-5{% if section.settings.title == blank %} hidden{% endif %}">{{ section.settings.title | escape }}</h2>
 
-  <ul class="m-5 gap-5 collection-list grid grid-cols-1{% if section.settings.layout == "layout-1" %} sm:grid-cols-2{% else %} sm:grid-cols-3{% endif %} collection-list--{{ section.blocks.size }}-items"
+  <ul class="px-5 pt-5 gap-5 collection-list grid grid-cols-1{% if section.settings.layout == "layout-1" %} sm:grid-cols-2{% else %} sm:grid-cols-3{% endif %} collection-list--{{ section.blocks.size }}-items"
     id="Slider-{{ section.id }}"
     role="list"
   >
@@ -16,9 +17,9 @@
     <li {{ block.shopify_attributes }}
     class="{% if forloop.index == 1 and section.settings.layout == "layout-2" %}col-span-2{% endif %}{% if forloop.index == 2 and section.settings.layout == "layout-3" %}col-span-2{% endif %}">
       <a{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %} href="{{ block.settings.collection.url }}"{% endif %}
-        class="h-full card animate-arrow link{% if block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} card--light-border"
+        class="h-full card animate-arrow {% if block.settings.collection.image != blank %} card--media{% else %} tw-button{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} card--light-border"
       >
-        <div class="h-full card--stretch card-colored scheme-{{ section.settings.color_scheme }}">
+        <div class="h-full card--stretch card-colored">
           {%- if block.settings.collection.image != blank -%}
             <div class="relative h-full">
               <div class="h-full media{% if section.blocks.size > 1 %} media--{{ section.settings.image_ratio }}{% endif %} media--hover-effect overflow-hidden"
@@ -69,6 +70,7 @@
     </li>
   {%- endfor -%}
   </ul>
+  </div>
 </section> 
 
 {% schema %}
