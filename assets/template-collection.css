@@ -232,7 +232,7 @@
 }
 
 .facets__display {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   position: absolute;
   border: 1px solid var(--color-text-20);
   top: calc(100% + 0.3125rem);
@@ -250,7 +250,7 @@
   font-size: 0.875rem;
   position: sticky;
   top: 0;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   z-index: 1;
 }
 
@@ -290,7 +290,7 @@
 }
 
 .facet-checkbox > svg {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   margin-right: 0.75rem;
   flex-shrink: 0;
 }
@@ -379,7 +379,7 @@ a.active-facets__button--light:hover {
 a.active-facets__button:focus-visible,
 a.active-facets__button:focus {
   box-shadow: 0 0 0 0.0625rem var(--color-text-20),
-    0 0 0 0.125rem var(--color-background), 0 0 0 0.25rem var(--body-text);
+    0 0 0 0.125rem var(--body-bg), 0 0 0 0.25rem var(--body-text);
   outline: none;
 }
 
@@ -413,7 +413,7 @@ a.active-facets__button:focus {
   height: 1.0625rem;
   border-radius: 50%;
   background-color: var(--color-button-border);
-  color: var(--color-background);
+  color: var(--body-bg);
   margin-left: 0.4375rem;
 }
 
@@ -430,7 +430,7 @@ a.active-facets__button:focus {
   width: 0.125rem;
   height: 0.125rem;
   display: block;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border-radius: 50%;
 }
 
@@ -461,7 +461,7 @@ a.active-facets__button:focus {
 }
 
 .mobile-facets__inner {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   width: calc(100% - 3.125rem);
   margin-left: auto;
   height: 100%;
@@ -470,7 +470,7 @@ a.active-facets__button:focus {
 }
 
 .mobile-facets__header {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border-bottom: 0.0625rem solid var(--color-text-20);
   padding: 0.625rem 1.5625rem;
   text-align: center;
@@ -630,7 +630,7 @@ details[open] .mobile-facets__close--no-js svg {
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border: 0.0625rem solid var(--color-text-20);
   border-top: none;
   border-bottom: none;
@@ -672,14 +672,14 @@ input.mobile-facets__checkbox {
 .mobile-facets__label {
   padding: 0.9375rem 0 0.9375rem 2.8125rem;
   width: 100%;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   transition: background-color 0.2s ease;
   word-break: break-word;
   display: flex;
 }
 
 .mobile-facets__label > svg {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   position: relative;
   z-index: 2;
   margin-right: 0.75rem;
@@ -708,7 +708,7 @@ input.mobile-facets__checkbox {
 }
 
 .mobile-facets__footer {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border-top: 0.0625rem solid var(--color-text-20);
   padding: 1.25rem;
   bottom: 0;

@@ -38,7 +38,7 @@ menu-drawer > details[open] > summary::before {
   padding: 0;
   border: 0.0625rem solid var(--color-text-20);
   border-left: 0;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   overflow-x: hidden;
 }
 
@@ -172,7 +172,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border-left: 0.0625rem solid var(--color-text-20);
   z-index: 1;
   transform: translateX(100%);

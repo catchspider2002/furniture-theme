@@ -1,5 +1,5 @@
 .shopify-model-viewer-ui .shopify-model-viewer-ui__controls-area {
-  background: var(--color-background);
+  background: var(--body-bg);
   border-color: var(--color-text-4);
 }
 
@@ -24,7 +24,7 @@
 .shopify-model-viewer-ui .shopify-model-viewer-ui__button--poster {
   border-radius: 50%;
   color: var(--body-text);
-  background: var(--color-background);
+  background: var(--body-bg);
   border-color: var(--color-text-10);
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--duration-short) ease, color var(--duration-short) ease;

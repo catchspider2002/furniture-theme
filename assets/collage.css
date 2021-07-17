@@ -405,7 +405,7 @@
 }
 
 .collage-video__modal-toggle {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border: 0.0625rem solid var(--color-text-10);
   border-radius: 50%;
   color: var(--color-text-55);

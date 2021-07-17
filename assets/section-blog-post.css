@@ -1,5 +1,5 @@
 .article-template > *:first-child:not(.article-template__hero-container) {
-  margin-top: 3.125rem;
+  padding-top: 3.125rem;
 }
 
 .article-template__hero-container {
@@ -9,7 +9,7 @@
 
 @media screen and (min-width: 1320px) {
   .article-template__hero-container:first-child {
-    margin-top: 3.125rem;
+    padding-top: 3.125rem;
   }
 }
 
@@ -63,12 +63,12 @@
 .article-card__tags {
   display: flex;
   flex-wrap: wrap;
-  margin: -0.46875rem -0.46875rem 0;
+  margin: -0.5rem -0.5rem 0;
 }
 .article-card__tag {
   text-transform: uppercase;
-  padding: 0.15625rem 0.3125rem;
-  margin: 0.46875rem 0.46875rem;
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem 0.5rem;
   border-radius: var(--border-radius);
   font-size: 0.75rem;
   letter-spacing: 0.08125rem;
@@ -150,7 +150,7 @@
 
 .article-template__comments-comment {
   color: var(--color-text-75);
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   margin-bottom: 0.9375rem;
   padding: 1.25rem 1.25rem 0.9375rem;
 }

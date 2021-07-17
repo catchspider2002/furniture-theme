@@ -19,6 +19,12 @@
   --color-text-8: rgba(var(--body-text-rgb), 0.08);
   --color-text-4: rgba(var(--body-text-rgb), 0.04);
   --color-text-3: rgba(var(--body-text-rgb), 0.03);
+
+  --color-button-background: var(--button-bg);
+  --color-button-border: var(--button-bg);
+  --color-button-text: var(--button-text);
+  --color-button-text-rgb: var(--button-text-rgb);
+
   color: var(--body-text);
   background-color: var(--body-bg);
 }
@@ -71,7 +77,6 @@
   --button-bg-rgb: var(--color-scheme-secondary-fg-rgb);
   --button-text: var(--color-scheme-secondary-bg);
   --button-text-rgb: var(--color-scheme-secondary-bg-rgb);
-
 }
 .gray-text {
   color: var(--color-text-75);
@@ -315,7 +320,14 @@ a:hover,
 
 /* Primary button */
 
-:root,
+:root {
+  --color-button-background: var(--button-bg);
+  --color-button-border: var(--button-bg);
+  --color-button-text: var(--button-text);
+  --color-button-text-rgb: var(--button-text-rgb);
+}
+
+/* :root,
 .color-background-1 {
   --color-button-background: var(--color-base-accent-1);
   --color-button-border: var(--color-base-accent-1);
@@ -329,35 +341,41 @@ a:hover,
 .color-accent-2 {
   --color-button-background: var(--color-foreground);
   --color-button-border: var(--color-foreground);
-  --color-button-text: var(--color-background);
+  --color-button-text: var(--body-bg);
   --color-button-text-rgb: var(--color-background-rgb);
-}
+} */
 
 /* Secondary button */
 
 .button--secondary {
   --color-button-background: transparent;
-  --color-button-border: var(--color-base-outline-button-labels);
+  --color-button-border: var(--button-bg);
+  --color-button-text: var(--button-bg);
+  --color-button-text-rgb: var(--button-bg-rgb);
+  /* --color-button-border: var(--color-base-outline-button-labels);
   --color-button-text: var(--color-base-outline-button-labels);
-  --color-button-text-rgb: var(--color-base-outline-button-labels-rgb);
+  --color-button-text-rgb: var(--color-base-outline-button-labels-rgb); */
 }
 
-.color-background-2 .button--secondary,
+/* .color-background-2 .button--secondary,
 .color-inverse .button--secondary,
 .color-accent-1 .button--secondary,
 .color-accent-2 .button--secondary {
   --color-button-border: var(--color-foreground);
   --color-button-text: var(--color-foreground);
   --color-button-text-rgb: var(--color-foreground-rgb);
-}
+} */
 
 /* Tertiary button */
 
 .button--tertiary {
   --color-button-background: transparent;
-  --color-button-border: rgba(var(--color-base-outline-button-labels-rgb), 0.2);
+  --color-button-border: rgba(var(--button-bg-rgb), 0.2);
+  --color-button-text: var(--button-bg);
+  --color-button-text-rgb: var(--button-bg-rgb);
+  /* --color-button-border: rgba(var(--color-base-outline-button-labels-rgb), 0.2);
   --color-button-text: var(--color-base-outline-button-labels);
-  --color-button-text-rgb: var(--color-base-outline-button-labels-rgb);
+  --color-button-text-rgb: var(--color-base-outline-button-labels-rgb); */
 }
 
 .color-background-2 .button--tertiary,
@@ -372,7 +390,7 @@ a:hover,
 
 :root,
 .color-background-1 {
-  --color-badge-background: var(--color-background);
+  --color-badge-background: var(--body-bg);
   --color-badge-border: var(--color-text-10);
 }
 
@@ -380,8 +398,8 @@ a:hover,
 .color-inverse,
 .color-accent-1,
 .color-accent-2 {
-  --color-badge-background: var(--color-background);
-  --color-badge-border: var(--color-background);
+  --color-badge-background: var(--body-bg);
+  --color-badge-border: var(--body-bg);
 }
 
 /* base */
@@ -444,23 +462,23 @@ html.no-js .no-js-hidden {
 }
 
 .spaced-section {
-  margin-top: 3.125rem;
+  padding-top: 3.125rem;
 }
 
 .spaced-section:last-child {
-  margin-bottom: 3.125rem;
+  padding-bottom: 3.125rem;
 }
 
 .spaced-section--full-width + .spaced-section--full-width {
-  margin-top: 0;
+  padding-top: 0;
 }
 
 .spaced-section--full-width:first-child {
-  margin-top: 0;
+  padding-top: 0;
 }
 
 .spaced-section--full-width:last-child {
-  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 body,
@@ -470,7 +488,7 @@ body,
 .color-accent-1,
 .color-accent-2 {
   color: var(--color-text-75);
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
 }
 
 .background-secondary {
@@ -546,97 +564,6 @@ body,
   bottom: 0;
   left: 0;
   z-index: 2;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-.h0,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5 {
-  font-family: var(--font-heading-family);
-  font-style: var(--font-heading-style);
-  font-weight: normal;
-  letter-spacing: 0.0375rem;
-  /* color: var(--color-foreground); */
-  line-height: 1.3;
-}
-
-.h0 {
-  font-size: 2.5rem;
-}
-
-@media only screen and (min-width: 768px) {
-  .h0 {
-    font-size: 3.25rem;
-  }
-}
-
-h1,
-.h1 {
-  font-size: 1.875rem;
-}
-
-@media only screen and (min-width: 768px) {
-  h1,
-  .h1 {
-    font-size: 2.5rem;
-  }
-}
-
-h2,
-.h2 {
-  font-size: 1.25rem;
-}
-
-@media only screen and (min-width: 768px) {
-  h2,
-  .h2 {
-    font-size: 1.5rem;
-  }
-}
-
-h3,
-.h3 {
-  font-size: 1.0625rem;
-}
-
-@media only screen and (min-width: 768px) {
-  h3,
-  .h3 {
-    font-size: 1.125rem;
-  }
-}
-
-h4,
-.h4 {
-  font-family: var(--font-heading-family);
-  font-style: var(--font-heading-style);
-  font-size: 0.9375rem;
-}
-
-h5,
-.h5 {
-  font-size: 0.75rem;
-}
-
-@media only screen and (min-width: 768px) {
-  h5,
-  .h5 {
-    font-size: 0.8125rem;
-  }
-}
-
-h6,
-.h6 {
-  color: var(--color-text-75);
-  margin-block-start: 1.67em;
-  margin-block-end: 1.67em;
 }
 
 blockquote {
@@ -935,14 +862,14 @@ summary::-webkit-details-marker {
 *:focus-visible {
   outline: 0.125rem solid var(--color-text-50);
   outline-offset: 0.1875rem;
-  box-shadow: 0 0 0 0.1875rem var(--color-background), 0 0 0.3125rem 0.25rem var(--color-text-30);
+  box-shadow: 0 0 0 0.1875rem var(--body-bg), 0 0 0.3125rem 0.25rem var(--color-text-30);
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 *:focus {
   outline: 0.125rem solid var(--color-text-50);
   outline-offset: 0.1875rem;
-  box-shadow: 0 0 0 0.1875rem var(--color-background), 0 0 0.3125rem 0.25rem var(--color-text-30);
+  box-shadow: 0 0 0 0.1875rem var(--body-bg), 0 0 0.3125rem 0.25rem var(--color-text-30);
 }
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
@@ -1348,11 +1275,11 @@ deferred-media {
 }
 
 .button:focus-visible {
-  box-shadow: 0 0 0 0.0625rem var(--color-button-border), 0 0 0 0.1875rem var(--color-background), 0 0 0.3125rem 0.25rem var(--color-text-30);
+  box-shadow: 0 0 0 0.0625rem var(--color-button-border), 0 0 0 0.1875rem var(--body-bg), 0 0 0.3125rem 0.25rem var(--color-text-30);
 }
 
 .button:focus {
-  box-shadow: 0 0 0 0.0625rem var(--color-button-border), 0 0 0 0.1875rem var(--color-background), 0 0 0.3125rem 0.25rem var(--color-text-30);
+  box-shadow: 0 0 0 0.0625rem var(--color-button-border), 0 0 0 0.1875rem var(--body-bg), 0 0 0.3125rem 0.25rem var(--color-text-30);
 }
 
 .button,
@@ -1464,13 +1391,13 @@ deferred-media {
 .field__input:focus-visible,
 .select__select:focus-visible,
 .field input:focus-visible {
-  box-shadow: 0 0 0 0.0625rem var(--color-text-55), 0 0 0 0.1875rem var(--color-background), 0 0 0.3125rem 0.25rem var(--color-text-30);
+  box-shadow: 0 0 0 0.0625rem var(--color-text-55), 0 0 0 0.1875rem var(--body-bg), 0 0 0.3125rem 0.25rem var(--color-text-30);
 }
 
 .field__input:focus,
 .select__select:focus,
 .field input:focus {
-  box-shadow: 0 0 0 0.0625rem var(--color-text-55), 0 0 0 0.1875rem var(--color-background), 0 0 0.3125rem 0.25rem var(--color-text-30);
+  box-shadow: 0 0 0 0.0625rem var(--color-text-55), 0 0 0 0.1875rem var(--body-bg), 0 0 0.3125rem 0.25rem var(--color-text-30);
 }
 
 .text-area,
@@ -1695,8 +1622,8 @@ input[type="checkbox"] {
 .quantity__input:-webkit-autofill,
 .quantity__input:-webkit-autofill:hover,
 .quantity__input:-webkit-autofill:active {
-  box-shadow: 0 0 0 6.25rem var(--color-background) inset !important;
-  -webkit-box-shadow: 0 0 0 6.25rem var(--color-background) inset !important;
+  box-shadow: 0 0 0 6.25rem var(--body-bg) inset !important;
+  -webkit-box-shadow: 0 0 0 6.25rem var(--body-bg) inset !important;
 }
 
 .quantity__input::-webkit-outer-spin-button,
@@ -1763,7 +1690,7 @@ input[type="checkbox"] {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--color-background);
+  background: var(--body-bg);
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -1777,8 +1704,8 @@ input[type="checkbox"] {
 
 .cart-count-bubble {
   position: absolute;
-  background-color: var(--color-base-accent-1);
-  color: var(--color-base-solid-button-labels);
+  background-color: var(--button-bg);
+  color: var(--button-text);
   height: 1.0625rem;
   width: 1.0625rem;
   border-radius: 100%;
@@ -1819,7 +1746,7 @@ input[type="checkbox"] {
 .header-wrapper {
   display: block;
   position: relative;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
 }
 
 .header-wrapper--border-bottom {
@@ -1831,7 +1758,7 @@ input[type="checkbox"] {
   grid-template-areas: "left-icon heading icons";
   grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
@@ -1904,7 +1831,7 @@ input[type="checkbox"] {
 
 .header__heading-link {
   display: inline-block;
-  padding: 0.46875rem;
+  padding: 0.5rem;
   text-decoration: none;
   word-break: break-word;
 }
@@ -1925,7 +1852,7 @@ input[type="checkbox"] {
 
 @media screen and (min-width: 1024px) {
   .header__heading-link {
-    margin-left: -0.46875rem;
+    margin-left: -0.5rem;
   }
 
   .header__heading,
@@ -2230,3 +2157,79 @@ input::-webkit-search-decoration {
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+/* purgecss start ignore */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: normal;
+  letter-spacing: 0.0375rem;
+  /* color: var(--color-foreground); */
+  line-height: 1.3;
+}
+
+.h0 {
+  font-size: 2.5rem;
+}
+h1,
+.h1 {
+  font-size: 1.875rem;
+}
+h2,
+.h2 {
+  font-size: 1.25rem;
+}
+h3,
+.h3 {
+  font-size: 1.0625rem;
+}
+h4,
+.h4 {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-size: 0.9375rem;
+}
+h5,
+.h5 {
+  font-size: 0.75rem;
+}
+
+h6,
+.h6 {
+  color: var(--color-text-75);
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+}
+@media only screen and (min-width: 768px) {
+  .h0 {
+    font-size: 3.25rem;
+  }
+  h1,
+  .h1 {
+    font-size: 2.5rem;
+  }
+  h2,
+  .h2 {
+    font-size: 1.5rem;
+  }
+  h3,
+  .h3 {
+    font-size: 1.125rem;
+  }
+  h5,
+  .h5 {
+    font-size: 0.8125rem;
+  }
+}
+/* purgecss end ignore */

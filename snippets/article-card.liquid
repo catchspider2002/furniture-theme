@@ -13,8 +13,8 @@
 <article class="article-card{% if article.image == blank or show_image == false %} article-card--no-image{% endif %}" aria-labelledby="Article-{{ article.id }}">
   <div class="article-content motion-reduce">
     {%- if show_image == true and article.image -%}
-      <div class="article-card__image-wrapper">
-        <a href="{{ article.url }}" class="article-card__image media media--landscape">
+      <div>
+        <a href="{{ article.url }}" class="media media--landscape block overflow-hidden">
           <img srcset="
             {%- if article.image.src.width >= 165 -%}{{ article.image.src | img_url: '165x' }} 165w,{%- endif -%}
             {%- if article.image.src.width >= 360 -%}{{ article.image.src | img_url: '360x' }} 360w,{%- endif -%}
@@ -46,7 +46,7 @@
                 {% endfor %}
                 </div>
               {%- endif -%}
-              <h2 class="article-card__title" id="Article-{{ article.id }}">
+              <h2 class="article-card__title font-semibold" id="Article-{{ article.id }}">
                 <a class="full-unstyled-link" href="{{ article.url }}" >{{ article.title | escape }}</a>
               </h2>
               {%- if block.settings.show_date -%}
@@ -72,7 +72,7 @@
 
           {%- when 'link'-%}
             <div class="article-card__footer" {{ block.shopify_attributes }}>
-              <a href="{{ article.url }}" class="tw-link article-card__link" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title | escape }}">
+              <a href="{{ article.url }}" class="tw-link article-card__link font-semibold" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title | escape }}">
                 {{ 'blogs.article.read_more' | t }}
               </a>
 

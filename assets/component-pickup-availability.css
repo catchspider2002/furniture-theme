@@ -45,7 +45,7 @@ pickup-availability[available] {
 }
 
 pickup-availability-drawer {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border: 0.0625rem solid var(--color-text-20);
   height: 100%;
   opacity: 0;

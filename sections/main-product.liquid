@@ -16,7 +16,8 @@
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-<section class="page-width">
+<section class="scheme-secondary">
+  <div class="page-width py-12">
   <div class="product flex grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
       <slider-component class="slider-mobile-gutter">
@@ -413,6 +414,7 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
+</div>
 </section>
 
 {% javascript %}
@@ -461,7 +463,7 @@
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
-  "class": "product-section spaced-section",
+  "class": "product-section",
   "blocks": [
     {
       "type": "@app"

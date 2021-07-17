@@ -62,6 +62,7 @@
 .shopify-payment-button__button--unbranded {
   background-color: var(--color-button-background);
   box-shadow: 0 0 0 0.0625rem var(--color-button-border);
+  color: var(--color-button-text);
   font-size: 0.875rem;
   line-height: 1.2;
   letter-spacing: 0.04375rem;
@@ -140,7 +141,7 @@ fieldset.product-form__input .form__label {
 .product-form__input input[type="radio"] + label {
   border: 0.0625rem solid var(--color-text-55);
   border-radius: 2.5rem;
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   color: var(--body-text);
   display: inline-block;
   margin: 0.4375rem 0.3125rem 0.125rem 0;
@@ -159,7 +160,7 @@ fieldset.product-form__input .form__label {
 
 .product-form__input input[type="radio"]:checked + label {
   background-color: var(--body-text);
-  color: var(--color-background);
+  color: var(--body-bg);
 }
 
 .product-form__input input[type="radio"]:disabled + label {
@@ -168,12 +169,12 @@ fieldset.product-form__input .form__label {
   text-decoration: line-through;
 }
 .product-form__input input[type="radio"]:focus-visible + label {
-  box-shadow: 0 0 0 0.1875rem var(--color-background), 0 0 0 0.3125rem var(--color-text-55);
+  box-shadow: 0 0 0 0.1875rem var(--body-bg), 0 0 0 0.3125rem var(--color-text-55);
 }
 
 /* Fallback */
 .product-form__input input[type="radio"]:focus + label {
-  box-shadow: 0 0 0 0.1875rem var(--color-background), 0 0 0 0.3125rem var(--color-text-55);
+  box-shadow: 0 0 0 0.1875rem var(--body-bg), 0 0 0 0.3125rem var(--color-text-55);
 }
 
 /* No outline when focus-visible is available in the browser */
@@ -252,7 +253,7 @@ a.product__text {
 
 .product .price--sold-out .price__badge-sold-out {
   background: transparent;
-  color: var(--color-background);
+  color: var(--body-bg);
   padding: 0.625rem 1rem 0 0.375rem;
   border: none;
 }
@@ -378,7 +379,7 @@ a.product__text {
 }
 
 .product__media-icon {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border-radius: 50%;
   border: 0.0625rem solid var(--color-text-10);
   color: var(--body-text);
@@ -522,7 +523,7 @@ a.product__text {
 }
 
 .product-media-modal__toggle {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border: 0.0625rem solid var(--color-text-10);
   border-radius: 50%;
   color: var(--color-text-55);
@@ -618,7 +619,7 @@ a.product__text {
   width: 100%;
   color: var(--body-text);
   cursor: pointer;
-  border: 0.125rem inset var(--color-background);
+  border: 0.125rem inset var(--body-bg);
   border-style: solid;
 }
 
@@ -642,7 +643,7 @@ a.product__text {
   height: 1.5rem;
   z-index: 2;
   pointer-events: none;
-  fill: var(--color-background);
+  fill: var(--body-bg);
 }
 
 /* Product share */
@@ -658,7 +659,7 @@ a.product__text {
 
 .share-button__fallback {
   border: 0.0625rem solid var(--color-text-10);
-  background: var(--color-background);
+  background: var(--body-bg);
   padding: 1.25rem;
   position: absolute;
   top: 2.5rem;
@@ -754,7 +755,7 @@ a.product__text {
 
 .product-popup-modal__button {
   display: grid;
-  grid-gap: 0.46875rem;
+  grid-gap: 0.5rem;
   grid-auto-flow: column;
   font-size: 0.875rem;
   /* padding-right: 0.8125rem; */
@@ -787,7 +788,7 @@ a.product__text {
 }
 
 .product-popup-modal__toggle {
-  background-color: var(--color-background);
+  background-color: var(--body-bg);
   border: 0.0625rem solid var(--color-text-10);
   border-radius: 50%;
   color: var(--color-text-55);
