@@ -14,6 +14,7 @@
   --color-text-40: rgba(var(--body-text-rgb), 0.4);
   --color-text-30: rgba(var(--body-text-rgb), 0.3);
   --color-text-20: rgba(var(--body-text-rgb), 0.2);
+  --color-text-15: rgba(var(--body-text-rgb), 0.15);
   --color-text-10: rgba(var(--body-text-rgb), 0.1);
   --color-text-8: rgba(var(--body-text-rgb), 0.08);
   --color-text-4: rgba(var(--body-text-rgb), 0.04);
@@ -77,6 +78,14 @@
   --button-bg-rgb: var(--color-scheme-secondary-fg-rgb);
   --button-text: var(--color-scheme-secondary-bg);
   --button-text-rgb: var(--color-scheme-secondary-bg-rgb);
+}
+
+.card-bg {
+  background-color: var(--color-text-8);
+}
+
+.scheme-dark .card-bg {
+  background-color: var(--color-text-15);
 }
 
 .gray-text {
@@ -394,13 +403,13 @@ a:hover,
   --color-button-text-rgb: var(--color-base-outline-button-labels-rgb); */
 }
 
-.color-background-2 .button--tertiary,
+/* .color-background-2 .button--tertiary,
 .color-inverse .button--tertiary,
 .color-accent-1 .button--tertiary,
 .color-accent-2 .button--tertiary {
   --color-button-border: var(--color-text-20);
   --color-button-text: var(--color-foreground);
-}
+} */
 
 /* Badges */
 
@@ -1312,6 +1321,11 @@ deferred-media {
 
 .button:focus {
   box-shadow: 0 0 0 0.0625rem var(--color-button-border), 0 0 0 0.1875rem var(--body-bg), 0 0 0.3125rem 0.25rem var(--color-text-30);
+}
+
+.button:hover {
+  color: var(--color-button-text);
+  text-decoration: none;
 }
 
 .button,
@@ -2895,11 +2909,6 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .-my-1 {

@@ -71,9 +71,9 @@
   }
 }
 
-.background-secondary .article-card {
-  background-color: var(--body-bg);
-}
+/* .background-secondary .article-card {
+  background-color: var(--color-background);
+} */
 
 @media screen and (max-width: 767px) {
   .slider.blog__posts--1-items {
